@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Main.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView Color="Bisque" Grid.Column="0" Grid.Row="0" />
+        <BoxView Color="#cc2" Grid.Column="1" Grid.Row="0" />
+        <BoxView Color="#023411" Grid.Column="2" Grid.Row="0" />
+
+        <BoxView Color ="#cffccccc" Grid.Column="0" Grid.Row="1" />
+        <BoxView Color="Aqua"  Grid.Column="1" Grid.Row="1" />
+        <BoxView Color="#063555" Grid.Column="2" Grid.Row="1" />
+
+    </Grid>
+
+</ContentPage>
