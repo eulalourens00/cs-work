@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Main.MainPage">
 
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -23,6 +23,34 @@
         <BoxView Color="Aqua"  Grid.Column="1" Grid.Row="1" />
         <BoxView Color="#063555" Grid.Column="2" Grid.Row="1" />
 
-    </Grid>
+    </Grid>-->
+
+    <StackLayout Orientation="Vertical">
+
+        <BoxView Color="LightPink" CornerRadius="15" WidthRequest="100" HeightRequest="100"></BoxView>
+        
+        <Label x:Name ="label1" Text="My text" VerticalOptions="Center"
+           HorizontalOptions="Center" TextColor="DarkRed" BackgroundColor="DarkGrey"
+           FontSize="40" FontFamily="Arial" FontAttributes="Bold">
+        </Label>
+
+        <Entry x:Name ="entry1" Placeholder="Enter a value:" CharacterSpacing="2" ClearButtonVisibility="WhileEditing"
+               FontAttributes="Bold" FontSize="25" Keyboard="Chat"/>
+        
+        <!--<Editor Placeholder="Text:" FontAttributes="Bold" FontSize="25" Keyboard="Chat"
+                PlaceholderColor="Beige"
+                Text="Empty" SelectionLength="2" MaxLength="60" IsSpellCheckEnabled="True"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                TextChanged="Editor_TextChanged"
+                />-->
+
+
+        <Entry IsPassword="True"></Entry>
+        <Button x:Name ="button1"  Text="OK" Clicked="Button_Clicked" ></Button>
+        <Image Aspect="Fill" IsAnimationPlaying="True" IsOpaque="False" 
+       Source="C://cs-work//cs-work//Main//Resources//Images//pic.png" 
+               MaximumHeightRequest="200" MaximumWidthRequest="230"></Image>
+    </StackLayout>
 
 </ContentPage>
