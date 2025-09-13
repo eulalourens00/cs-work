@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClothingStoreApp.MainPage">
+    
+    <Grid BackgroundColor=" Transparent" >
+
+                                    <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
+
+        <Image Aspect="AspectFit" IsOpaque="False" 
+                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
+                HeightRequest="18" WidthRequest="92"
+                Margin="0,0,0,660" ></Image>
+
+        <Image HeightRequest="55" WidthRequest="55" IsOpaque="False" 
+                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" 
+                Margin="300,0,0,660" ></Image>
+        
+        <Button x:Name="bagButton" HeightRequest="45" WidthRequest="45"
+                Margin="300,0,0,660" BackgroundColor=" Transparent" Clicked="bagButton_Clicked"></Button>
+
+        <Label x:Name="debugLabel1" FontSize="40" TextColor="Pink"></Label>
+        <Label x:Name="debugLabel2" FontSize="20" TextColor="Red"></Label>
+        
+        <Image HeightRequest="120" WidthRequest="120" IsOpaque="False" 
+                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png" 
+                Margin="0,0,300,660" ></Image>
+
+        <Button x:Name="menuButton" HeightRequest="45" WidthRequest="45"
+                Margin="0,0,300,660" BackgroundColor="Transparent" Clicked="menuButton_Clicked"></Button>
+
+                        <!--Margin - right / bottom / left /top-->
+
+        <BoxView BackgroundColor=" Transparent" Color="#F4C600" CornerRadius="20" 
+                    WidthRequest="169" HeightRequest="169" 
+                    Margin="0,0,190,390"></BoxView>
+
+        <BoxView BackgroundColor=" Transparent" Color="#EB6434" CornerRadius="20" 
+                    WidthRequest="169" HeightRequest="169"
+                    Margin="190,0,0,390"></BoxView>   
+    </Grid>
+
+</ContentPage>
