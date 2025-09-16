@@ -6,12 +6,12 @@
     <Grid BackgroundColor=" Transparent" >
 
                                     <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
-
+                        <!--ЛОГО-->
         <Image Aspect="AspectFit" IsOpaque="False" 
                 Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
                 HeightRequest="18" WidthRequest="92"
-                Margin="0,0,0,660" ></Image>
-
+                Margin="0,0,0,660" ></Image>    
+                        <!--КНОПКИ-->
         <Image HeightRequest="55" WidthRequest="55" IsOpaque="False" 
                 Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" 
                 Margin="300,0,0,660" ></Image>
@@ -19,9 +19,16 @@
         <Button x:Name="bagButton" HeightRequest="45" WidthRequest="45"
                 Margin="300,0,0,660" BackgroundColor=" Transparent" Clicked="bagButton_Clicked"></Button>
 
-        <Label x:Name="debugLabel1" FontSize="40" TextColor="Pink"></Label>
-        <Label x:Name="debugLabel2" FontSize="20" TextColor="Red"></Label>
+        <Button x:Name="bagButton_Cnsl" IsVisible="False" BackgroundColor="#60000000" Clicked="bagCnsl_Clicked"
+                Text="In process. Click to close" 
+                HeightRequest="50" WidthRequest="250"
+                FontSize="18" TextColor="Black" FontAttributes="Bold"></Button>
         
+        <Button x:Name="menuButton_Cnsl" IsVisible="False" BackgroundColor="#60000000" Clicked="manuCnsl_Clicked"
+                Text="In process. Click to close" 
+                HeightRequest="50" WidthRequest="250"
+                FontSize="18" TextColor="black" FontAttributes="Bold"></Button>
+
         <Image HeightRequest="120" WidthRequest="120" IsOpaque="False" 
                 Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png" 
                 Margin="0,0,300,660" ></Image>
@@ -29,15 +36,31 @@
         <Button x:Name="menuButton" HeightRequest="45" WidthRequest="45"
                 Margin="0,0,300,660" BackgroundColor="Transparent" Clicked="menuButton_Clicked"></Button>
 
-                        <!--Margin - right / bottom / left /top-->
-
+                            <!--Margin - right / bottom / left /top-->
+        
+        
+                                    <!--КУБИКИ С ПРОДАЖАМИ-->
+        
         <BoxView BackgroundColor=" Transparent" Color="#F4C600" CornerRadius="20" 
                     WidthRequest="169" HeightRequest="169" 
                     Margin="0,0,190,390"></BoxView>
 
         <BoxView BackgroundColor=" Transparent" Color="#EB6434" CornerRadius="20" 
                     WidthRequest="169" HeightRequest="169"
-                    Margin="190,0,0,390"></BoxView>   
+                    Margin="190,0,0,390"></BoxView>
+
+        <Label Text="POPULAR PRODUCTS" FontSize="18" FontAttributes="Bold"
+               Margin="0, 0, 160, 150" HeightRequest="30" WidthRequest="200"></Label>
+        
+                                        <!--КУРТОЧКИ ГЛАМУРНЫЕ-->
+        
+        <Image Aspect="AspectFit" Margin="0, 200, 0 , 0"
+               Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//kurtka.png"
+               HeightRequest="273" WidthRequest="350"></Image>
+
+        <Image Aspect="AspectFit" Margin="0, 0, 0 , 200"
+               Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//glamurkurtka.png"
+               HeightRequest="273" WidthRequest="350"></Image>
     </Grid>
 
 </ContentPage>
