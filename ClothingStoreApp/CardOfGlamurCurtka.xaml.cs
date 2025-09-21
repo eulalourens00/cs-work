@@ -4,7 +4,7 @@ public partial class CardOfGlamurCurtka : ContentPage
 {
 	public CardOfGlamurCurtka()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
     private async void back_clicked(object sender, EventArgs e)
