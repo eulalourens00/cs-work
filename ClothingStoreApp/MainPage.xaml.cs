@@ -11,20 +11,18 @@ namespace ClothingStoreApp
         }
 
         private void bagButton_Clicked(object sender, EventArgs e)
-        { 
-            bagButton_Cnsl.IsVisible = true;
+        {
+            DisplayAlert("Bag", "In process", "OK");
         }
 
         private void menuButton_Clicked(object sender, EventArgs e)
         {
-            menuButton_Cnsl.IsVisible = true;
+            DisplayAlert("Menu", "In process", "OK");
         }
 
-        private void bagCnsl_Clicked(object sender, EventArgs e)
-        { bagButton_Cnsl.IsVisible = false; }
-
-        private void manuCnsl_Clicked(object sender, EventArgs e)
-        { menuButton_Cnsl.IsVisible = false; }
+        private async void change_CardOfOrder(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("CardOfGlamurCurtka");
+        }
     }
-
 }

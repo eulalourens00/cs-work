@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClothingStoreApp.CardOfGlamurCurtka"
+             Title="CardOfGlamurCurtka">
+    <ScrollView Background="Transparent">
+        <VerticalStackLayout>
+            <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
+            <!--ВСЕ КОПИПАСТОМ-->
+            <Grid Padding="30,10,30,20" ColumnSpacing="10" HorizontalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="0" CornerRadius="28">
+                    <ImageButton x:Name="BackTO" Clicked="back_clicked" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent" Clicked="menuButton_Clicked"
+                            Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//back.png" Aspect="AspectFill"
+                    ></ImageButton>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="1">
+                    <Image Aspect="Center" IsOpaque="False"
+                           Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
+                           HeightRequest="20" WidthRequest="150" />
+                </Frame>
+
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="2" CornerRadius="28">
+                    <ImageButton x:Name="bagButton" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent" Clicked="bagButton_Clicked"
+                         Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" Aspect="AspectFill" 
+                    ></ImageButton>
+                </Frame>
+            </Grid>
+            
+            
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

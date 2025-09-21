@@ -13,6 +13,7 @@ namespace ClothingStoreApp
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("MonumentExtended-Regular.ttf", "MonumentExtended");
                 });
 
 #if DEBUG

@@ -1,66 +1,180 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#FFFFFF"
+             MinimumWidthRequest="430"
              x:Class="ClothingStoreApp.MainPage">
-    
-    <Grid BackgroundColor=" Transparent" >
 
-                                    <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
-                        <!--ЛОГО-->
-        <Image Aspect="AspectFit" IsOpaque="False" 
-                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
-                HeightRequest="18" WidthRequest="92"
-                Margin="0,0,0,660" ></Image>    
-                        <!--КНОПКИ-->
-        <Image HeightRequest="55" WidthRequest="55" IsOpaque="False" 
-                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" 
-                Margin="300,0,0,660" ></Image>
-        
-        <Button x:Name="bagButton" HeightRequest="45" WidthRequest="45"
-                Margin="300,0,0,660" BackgroundColor=" Transparent" Clicked="bagButton_Clicked"></Button>
+    <ScrollView Background="Transparent">
+        <VerticalStackLayout>
 
-        <Button x:Name="bagButton_Cnsl" IsVisible="False" BackgroundColor="#60000000" Clicked="bagCnsl_Clicked"
-                Text="In process. Click to close" 
-                HeightRequest="50" WidthRequest="250"
-                FontSize="18" TextColor="Black" FontAttributes="Bold"></Button>
-        
-        <Button x:Name="menuButton_Cnsl" IsVisible="False" BackgroundColor="#60000000" Clicked="manuCnsl_Clicked"
-                Text="In process. Click to close" 
-                HeightRequest="50" WidthRequest="250"
-                FontSize="18" TextColor="black" FontAttributes="Bold"></Button>
+            <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
+            <Grid Padding="30,10,30,20" ColumnSpacing="10" HorizontalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-        <Image HeightRequest="120" WidthRequest="120" IsOpaque="False" 
-                Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png" 
-                Margin="0,0,300,660" ></Image>
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="0" CornerRadius="28">
+                    <ImageButton x:Name="menuButton" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent" Clicked="menuButton_Clicked"
+                            Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png" Aspect="AspectFill"
+                    ></ImageButton>
+                </Frame>
 
-        <Button x:Name="menuButton" HeightRequest="45" WidthRequest="45"
-                Margin="0,0,300,660" BackgroundColor="Transparent" Clicked="menuButton_Clicked"></Button>
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="1">
+                    <Image Aspect="Center" IsOpaque="False"
+                           Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
+                           HeightRequest="20" WidthRequest="150" />
+                </Frame>
 
-                            <!--Margin - right / bottom / left /top-->
-        
-        
-                                    <!--КУБИКИ С ПРОДАЖАМИ-->
-        
-        <BoxView BackgroundColor=" Transparent" Color="#F4C600" CornerRadius="20" 
-                    WidthRequest="169" HeightRequest="169" 
-                    Margin="0,0,190,390"></BoxView>
+                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="2" CornerRadius="28">
+                    <ImageButton x:Name="bagButton" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent" Clicked="bagButton_Clicked"
+                         Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" Aspect="AspectFill" 
+                    ></ImageButton>
+                </Frame>
+            </Grid>
 
-        <BoxView BackgroundColor=" Transparent" Color="#EB6434" CornerRadius="20" 
-                    WidthRequest="169" HeightRequest="169"
-                    Margin="190,0,0,390"></BoxView>
+            <!--КУБИКИ С ПРОДАЖАМИ-->
+            <Grid Padding="30,0,30,0" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-        <Label Text="POPULAR PRODUCTS" FontSize="18" FontAttributes="Bold"
-               Margin="0, 0, 160, 150" HeightRequest="30" WidthRequest="200"></Label>
-        
-                                        <!--КУРТОЧКИ ГЛАМУРНЫЕ-->
-        
-        <Image Aspect="AspectFit" Margin="0, 200, 0 , 0"
-               Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//kurtka.png"
-               HeightRequest="273" WidthRequest="350"></Image>
+                <Frame Grid.Column="0" HeightRequest="169" WidthRequest="169" CornerRadius="20"
+                       BackgroundColor="#F4C600" BorderColor="Transparent">
 
-        <Image Aspect="AspectFit" Margin="0, 0, 0 , 200"
-               Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//glamurkurtka.png"
-               HeightRequest="273" WidthRequest="350"></Image>
-    </Grid>
+                    <Grid Padding="10,10,10,10">
+                        <Label FontSize="14" 
+                               Text="TRENDING PRODUCTS" TextColor="#FFFFFF"
+                               MinimumWidthRequest="112"/>
 
+                        <Label FontSize="51"
+                               Text="Zelox" TextColor="#FFFFFF" Opacity="0.1"
+                                LineBreakMode="NoWrap" MaxLines="1"
+                                Margin="0,25,0,0"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Start"
+                               ></Label>
+                        <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//strelka1.png" Aspect="AspectFit" 
+                               HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Column="2" HeightRequest="169" WidthRequest="169" CornerRadius="20"
+                       BackgroundColor="#EB6434" BorderColor="Transparent">
+
+                    <Grid Padding="10,10,10,10">
+                        <Label FontSize="14" 
+                               Text="SALE PRODUCTS" TextColor="#FFFFFF"
+                               MinimumWidthRequest="112"/>
+                        <Label FontSize="51"
+                               Text="Zelox" TextColor="#FFFFFF" Opacity="0.1"
+                               Margin="0,25,0,0"
+                               LineBreakMode="NoWrap" MaxLines="1"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start"
+                               ></Label>
+                        <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//strelka2.png" Aspect="AspectFit" 
+                               HeightRequest="28" WidthRequest="43" HorizontalOptions="End" VerticalOptions="End"/>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+
+            <Label Padding="40,10,40,0" Text="POPULAR PRODUCTS" FontSize="18" FontFamily="MonumentExtended"/>
+
+            <!--КУРТОЧКИ ГЛАМУРНЫЕ-->
+            <VerticalStackLayout Padding="30,20,20,0" Spacing="20">
+
+                <!--писец 1-->
+                <Frame CornerRadius="20" HeightRequest="273" WidthRequest="350" HorizontalOptions="Start" Padding="0" BorderColor="Transparent">
+                    <Grid>
+                        <ImageButton x:Name="CardOfOrder" Clicked="change_CardOfOrder" Aspect="AspectFill" HeightRequest="273" WidthRequest="350"
+                               Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//kurtka.png"></ImageButton>
+                        
+                        <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
+                            <Label Text="Avoine Hooded&#10;Quilted Jacket" TextColor="Black" FontSize="16"
+                                   HeightRequest="38" HorizontalTextAlignment="Start"/>
+
+                            <!--пипец цифры-->
+                            <Frame HeightRequest="31" WidthRequest="103" Padding="0"
+                                       VerticalOptions="End" HorizontalOptions="Start" BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="$ 1500" FontSize="14" TextColor="#EB6434"/>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                        <!--жестко оцениваем-->
+                        <Frame VerticalOptions="Start" HorizontalOptions="End" Margin="0,10,10,0"
+                                       HeightRequest="30" WidthRequest="70" Padding="0"
+                                       BackgroundColor="#FFFFFF" BorderColor="Transparent">
+
+                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//star.png" 
+                                       Aspect="AspectFit"
+                                               HorizontalOptions="Start" VerticalOptions="Center"
+                                               HeightRequest="13" WidthRequest="13"/>
+
+                                <Label Text="4.7" VerticalOptions="Center" FontSize="14" HeightRequest="15" WidthRequest="30"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        <Frame VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10"
+                                       HeightRequest="65" WidthRequest="65" CornerRadius="15"
+                                       BackgroundColor="#000000" BorderColor="Transparent">
+                            <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//baag.png" 
+                                   Aspect="AspectFill" WidthRequest="20" HeightRequest="23"/>
+                        </Frame>
+                    </Grid>
+
+                </Frame>
+
+
+                <!--писец 2-->
+                <Frame CornerRadius="20" HeightRequest="273" WidthRequest="350" HorizontalOptions="Start" Padding="0" BorderColor="Transparent">
+                    <Grid>
+                        <Image Aspect="AspectFill"
+                           Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//glamurkurtka.png"/>
+
+                        <!--НИЖЕ ЧИСТАЯ КОПИРКА ВЕРХЕГО КВАДРАТА
+                        КОРЗИНА СЕЛА В СТИРКЕ ААААААААААААААААААААААААААААААААААААААААА-->
+
+                        <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
+                            <Label Text="Hooded Metallic&#10;Shell Jacket" TextColor="Black" FontSize="16"
+           HeightRequest="38" HorizontalTextAlignment="Start"/>
+
+                            <!--пипец цифры2-->
+                            <Frame HeightRequest="31" WidthRequest="103" Padding="0"
+               VerticalOptions="End" HorizontalOptions="Start" BackgroundColor="#FFFFFF" BorderColor="Transparent">
+                                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="$ 1500" FontSize="14" TextColor="#F4C600"/>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                        <!--жестко оцениваем2-->
+                        <Frame VerticalOptions="Start" HorizontalOptions="End" Margin="0,10,10,0"
+               HeightRequest="30" WidthRequest="70" Padding="0"
+               BackgroundColor="#FFFFFF" BorderColor="Transparent">
+
+                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//star.png" 
+               Aspect="AspectFit"
+                       HorizontalOptions="Start" VerticalOptions="Center"
+                       HeightRequest="13" WidthRequest="13"/>
+
+                                <Label Text="4.7" VerticalOptions="Center" FontSize="14" HeightRequest="15" WidthRequest="30"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        <Frame VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10"
+               HeightRequest="65" WidthRequest="65" CornerRadius="15"
+               BackgroundColor="#000000" BorderColor="Transparent">
+                            <Image Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//baag.png" 
+           Aspect="AspectFill" WidthRequest="20" HeightRequest="23"/>
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
