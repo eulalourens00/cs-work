@@ -96,17 +96,18 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Frame Grid.Column="0">
+                <Frame Grid.Column="0" BorderColor="Transparent">
                     <Label Text="Avoine Hooded&#10;Quilted Jacket" TextColor="Black" FontSize="22"
-                    HeightRequest="38" HorizontalTextAlignment="Start"/>
+                     HorizontalTextAlignment="Start" Padding="10,0,20,0"/>
                 </Frame>
-                <Frame Grid.Column="1">
-                    <Image Aspect="AspectFill" WidthRequest="55" HeightRequest="55"
+                <Frame Grid.Column="1" BorderColor="Transparent" Margin="0,15,15,0"
+                       WidthRequest="55" HeightRequest="55">
+                    <Image Aspect="AspectFill" WidthRequest="25" HeightRequest="25" Margin="0,0,25,15"
                        Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//tag.png"  ></Image>
                 </Frame>
             </Grid>
 
-            <!--КУБИКИ С ПРОДАЖАМИ-->
+            <!--КУБИКИ -->
             <Grid Padding="30,0,30,0" ColumnSpacing="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -116,14 +117,28 @@
 
                 <Frame Grid.Column="0" HeightRequest="122" WidthRequest="169" CornerRadius="10" BackgroundColor="#F5F5F5" BorderColor="Transparent">
                     <Grid Padding="10,10,10,10">
-                        <Label FontSize="14" Text="CHOOSE&#10;COLOR" TextColor="#FFFFFF" MinimumWidthRequest="112"/>
+                        <Label FontSize="14" Text="CHOOSE&#10;COLOR" TextColor="#000000" MinimumWidthRequest="112"/>
 
                         <Label FontSize="51"
                             Text="Zelox" TextColor="#0000001A" Opacity="0.1"
                             LineBreakMode="NoWrap" MaxLines="1"
                             Margin="0,25,0,0"
                             HorizontalOptions="Start"
-                            VerticalOptions="Start"></Label>    
+                            VerticalOptions="Start"></Label>
+
+                        <Frame Margin="0,45,0,0" BorderColor="Transparent" BackgroundColor="#000000"
+                                   Padding="10,8,5,10" HeightRequest="32" WidthRequest="110" HorizontalOptions="Start">
+                            <HorizontalStackLayout Spacing="9">
+
+                                <Label Text="BEIGE" TextColor="#FFFFFF"
+                                           FontSize="12"/>
+                                
+                                <Frame HeightRequest="16" WidthRequest="37"
+                                           BackgroundColor="#EFEEEA" BorderColor="Transparent"/>
+                               
+                            </HorizontalStackLayout>
+                        </Frame>
+                        
                     </Grid>
                 </Frame>
 
@@ -140,9 +155,27 @@
                            HorizontalOptions="Start"
                            VerticalOptions="Start"
                         ></Label>
+
+                        <Frame Margin="0,45,0,0" BorderColor="Transparent" BackgroundColor="white"
+                                   Padding="10,8,5,10" HeightRequest="30" WidthRequest="110" HorizontalOptions="Start">
+                            <HorizontalStackLayout Spacing="9">
+                                <Label Text="MEDIUM" TextColor="black"
+                                           FontSize="12"/>
+
+                            </HorizontalStackLayout>
+                        </Frame>
+                        
                     </Grid>
                 </Frame>
+            </Grid>
 
+            <Grid>
+                <Frame BackgroundColor="#EB6434" CornerRadius="15" HeightRequest="82" WidthRequest="350"
+                       Margin="0,20,0,10" BorderColor="Transparent">
+                    <Label Text="CHEKOUT" TextColor="white" Padding="10,10,0,0"></Label>
+                </Frame>
+                <Label Text="$ 1500" TextColor="black" HorizontalOptions="End" Margin="30,50,70,0"></Label>
+                
             </Grid>
         </VerticalStackLayout>
     </ScrollView>
