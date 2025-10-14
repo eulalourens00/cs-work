@@ -1,0 +1,21 @@
+﻿^contentpage {
+    backdground-color: #9900f7;
+}
+stacklayout{
+    padding: 20;
+}
+
+#header{
+    font-size: 20;
+    font-weight: bold;
+    text-decoration:underline;
+}
+
+.eng {
+    font-size: 14;
+    font-weight: bold;
+    color:hotpink;
+}
+.rus{
+    font-size:12;
+}

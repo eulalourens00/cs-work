@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style x:Key ="purpleButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="#2a0d38"/>
+        <Setter Property="BackgroundColor" Value="#9900f7"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+</ResourceDictionary>

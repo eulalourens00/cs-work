@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="style_res.MainPage">
-
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
-            <!--<Color x:Key="textColor">#004D40</Color>
+            --><!--<Color x:Key="textColor">#004D40</Color>
             <Color x:Key="backColor">LightBlue</Color>
             <x:Double x:Key="margin">10</x:Double>-->
 
-            <!--<Color x:Key="textColor">#1976D2</Color>-->
+            <!--<Color x:Key="textColor">#1976D2</Color>--><!--
 
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="TextColor">
@@ -25,16 +24,27 @@
                 </Setter>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="BackgroundColor" Value="#80ccff"/>
+                <Setter Property="BackgroundColor" Value="LightGreen"/>
                 <Setter Property="Margin" Value="10"/>
             </Style>
-            
+
+            --><!--// наследование--><!--
+            <Style x:Key="blueButtonStyle" TargetType="Button" 
+                   BasedOn="{StaticResource buttonStyle}">
+                <Setter Property="TextColor" Value="Grey"/>
+                <Setter Property="BackgroundColor" Value="Blue"/>
+            </Style>
         </ResourceDictionary>
+
+        --><!--from PinkButton.xaml PurpleButton.xaml--><!--
+        <ResourceDictionary Source="/MyRes/PinkButton.xaml"/>
+        <ResourceDictionary Source="/MyRes/PurpleButton.xaml"/>
+        
     </ContentPage.Resources>
 
     <StackLayout Padding="10">
         
-        <!--<Button Text="Windows10" TextColor="{StaticResource Key=textColor}"
+        --><!--<Button Text="Windows10" TextColor="{StaticResource Key=textColor}"
                 BackgroundColor="{StaticResource Key=backColor}"
                 Margin="{StaticResource Key=margin}"
                 FontAttributes="Bold" FontSize="16"></Button>
@@ -46,12 +56,67 @@
         <!--<Button Text="Change" BackgroundColor="White" WidthRequest="120" 
                 TextColor="{DynamicResource Key=textColor}"
                 Clicked="Button_Clicked" FontSize="20" FontAttributes="Bold"
-                ></Button>-->
+                ></Button>--><!--
 
-        <Label Text="Win10" Style="{StaticResource buttonStyle}"/>
-        <Label Text="Win11" Style="{StaticResource buttonStyle}"/>
+        <Button Text="Win10" Style="{StaticResource pinkButtonStyle}"/>
+        <Button Text="Win11" Style="{StaticResource purpleButtonStyle}"/>
 
 
+    </StackLayout>-->
+    
+    
+    <!--style.css--><!--
+    <ContentPage.Resources>
+        <StyleSheetExtension Source="/style/MyStyle.css"/>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label x:Name="header" StyleId="header" Text="Words"/>
+        <Label Text="Apple" StyleClass="eng"/>
+        <Label Text="Banana" StyleClass="rus"/>
+    </StackLayout>-->
+
+    <!--<ContentPage.Resources>
+        <StyleSheet>
+        <![CDATA[
+            ^contenpage{
+            background-color:pink}
+        
+            stacklayout{
+            margin: 15,
+            padding: 10}
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>-->
+
+
+    
+    <!--дальше бога нет-->
+    <StackLayout>
+        <Entry x:Name="ent" Text="Oh hello my dear!">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CustomStates">
+
+                    <VisualState x:Name="Focused">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="#e339d2"/>
+                            <Setter Property="BackgroundColor" Value="#8c8c8c"/>
+
+                        </VisualState.Setters>
+                    </VisualState>
+
+
+                    <VisualState x:Name ="PointerOver">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="#4976e5"/>
+                            <Setter Property="BackgroundColor" Value="#751a3b"/>
+
+                        </VisualState.Setters>
+                    </VisualState>
+                    
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
     </StackLayout>
-
+    
 </ContentPage>
