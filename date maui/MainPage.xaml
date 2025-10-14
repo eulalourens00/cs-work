@@ -4,12 +4,54 @@
              x:Class="date_maui.MainPage">
 
     <StackLayout Padding="20">
-        
-        <Label x:Name="label1" Text="Choose date"></Label>
-        <DatePicker Format="d" DateSelected="Dateselected">
-            <DatePicker.MinimumDate>7/10/2024</DatePicker.MinimumDate>
-            <DatePicker.MaximumDate>7/20/2026</DatePicker.MaximumDate>
-        </DatePicker>
+        <Switch x:Name="switcher" IsToggled="True" Toggled="switcher_Toggled"></Switch>
+        <Label x:Name="label" FontSize="16"></Label>
+
+        <Label x:Name="statusLabel" FontSize="18" Text="Status - single/married"></Label>
+
+        <StackLayout>
+            <CheckBox x:Name="statusCheckBox" CheckedChanged="statusCheckBox_CheckedChanged"></CheckBox>
+            <Label FontSize="16" Text="married man/married woman"></Label>
+        </StackLayout>
+
+        <StackLayout>
+            <Label x:Name="header" Text="Choose your favourite LP"></Label>
+            <RadioButton GroupName="lang" Content="C#" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+            <RadioButton GroupName="lang" Content="C++" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+            <RadioButton GroupName="lang" Content="Java" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+            <RadioButton GroupName="lang" Content="Python" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+        </StackLayout>
+
+        <StackLayout>
+            <Picker x:Name="langPicker" Title="LP" 
+                    SelectedIndexChanged="langPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>C#</x:String>
+                    <x:String>C++</x:String>
+                    <x:String>Python</x:String>
+
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+        <StackLayout>
+            <TableView>
+                <TableView.Root>
+                    <TableRoot Title="PO">
+                        <TableSection Title="LP">
+                            <TextCell Text="Python" Detail="...."/>
+                            <TextCell Text="C#" Detail="The best LP"/>
+                        </TableSection>
+
+                        <TableSection Title="DB">
+                            <TextCell Text="MS SQL" Detail="kaif"/>
+                            <TextCell Text="My SQL" Detail="omg"/>
+                        </TableSection>
+
+                    </TableRoot>
+                </TableView.Root>
+            </TableView>
+        </StackLayout>
         
     </StackLayout>
 

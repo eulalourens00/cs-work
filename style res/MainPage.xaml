@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="style_res.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<Color x:Key="textColor">#004D40</Color>
+            <Color x:Key="backColor">LightBlue</Color>
+            <x:Double x:Key="margin">10</x:Double>-->
+
+            <!--<Color x:Key="textColor">#1976D2</Color>-->
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <Color>
+                            <x:Arguments>
+                                <x:Int32>0</x:Int32>
+                                <x:Int32>75</x:Int32>
+                                <x:Int32>25</x:Int32>
+                            </x:Arguments>
+                        </Color>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="#80ccff"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10">
+        
+        <!--<Button Text="Windows10" TextColor="{StaticResource Key=textColor}"
+                BackgroundColor="{StaticResource Key=backColor}"
+                Margin="{StaticResource Key=margin}"
+                FontAttributes="Bold" FontSize="16"></Button>
+
+        <Button Text="Windows11" TextColor="{StaticResource Key=textColor}"
+                BackgroundColor="{StaticResource Key=backColor}"-->
+                <!--Margin="{StaticResource Key=margin}"></Button>-->
+
+        <!--<Button Text="Change" BackgroundColor="White" WidthRequest="120" 
+                TextColor="{DynamicResource Key=textColor}"
+                Clicked="Button_Clicked" FontSize="20" FontAttributes="Bold"
+                ></Button>-->
+
+        <Label Text="Win10" Style="{StaticResource buttonStyle}"/>
+        <Label Text="Win11" Style="{StaticResource buttonStyle}"/>
+
+
+    </StackLayout>
+
+</ContentPage>

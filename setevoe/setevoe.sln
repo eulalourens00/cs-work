@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "setevoe", "setevoe.csproj", "{31032382-BE00-42EE-B4BA-AC76528DAA61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "..\WebApplication1\WebApplication1.csproj", "{7832C662-C603-0066-54F9-424A6A3EF9FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31032382-BE00-42EE-B4BA-AC76528DAA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31032382-BE00-42EE-B4BA-AC76528DAA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31032382-BE00-42EE-B4BA-AC76528DAA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31032382-BE00-42EE-B4BA-AC76528DAA61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7832C662-C603-0066-54F9-424A6A3EF9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7832C662-C603-0066-54F9-424A6A3EF9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7832C662-C603-0066-54F9-424A6A3EF9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7832C662-C603-0066-54F9-424A6A3EF9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B5FD794-CE79-4A8F-A7B3-6B2ED4C3C673}
+	EndGlobalSection
+EndGlobal
