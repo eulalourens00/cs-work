@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToeCalc.MainPage">
+
+    <StackLayout BackgroundColor="#8180e8" Padding="15">
+
+        <Label Text="WELCOME" TextColor="LightPink" FontSize="20" FontAttributes="Bold"/>
+        
+        <Button x:Name="TTT_Button" Text="Game" TextColor="White" BackgroundColor="#b973bf" 
+            FontAttributes="Bold" FontSize="15" 
+            HeightRequest="25" WidthRequest="100" Margin="15, 15, 15, 15"
+            Clicked="TTT_Button_Clicked"/>
+        
+        <Button x:Name="Calc_Button" Text="Calculator" TextColor="White" BackgroundColor="#739fbf" 
+            FontAttributes="Bold" FontSize="15" 
+            HeightRequest="25" WidthRequest="100" Margin="15, 15, 15, 15"
+            Clicked="Calc_Button_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>
