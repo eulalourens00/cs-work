@@ -3,10 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TicTacToeCalc.TicTacToe"
              Title="TicTacToe">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to TTT!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout Padding="20" BackgroundColor="#8180e8">
+
+            <!-- здесь бога нет -->
+            <Grid Margin="10,10,10,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="Back" Text="▶" FontSize="16" FontAttributes="Bold"
+                        WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent"
+                         Grid.Column="0"
+                        Clicked="Back_Clicked"/>
+            </Grid>
+
+            <Grid x:Name="GameGrid" RowSpacing="5" ColumnSpacing="5" 
+                  HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+
+            <Button x:Name="ResetButton" Text="New Game" BackgroundColor="#88affc" TextColor="White"
+                    HeightRequest="50" WidthRequest="150" HorizontalOptions="Center"
+                    Margin="10,20,10,10"
+                    Clicked="ResetButton_Clicked"/>
+
+            <!--ехеххе-->
+            <Image Source="pic.jpg" Aspect="AspectFill" MinimumHeightRequest="200" 
+                VerticalOptions="End" HorizontalOptions="Center" Margin="15"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -5,18 +5,21 @@
 
     <StackLayout BackgroundColor="#8180e8" Padding="15">
 
-        <Label Text="WELCOME" TextColor="LightPink" FontSize="20" FontAttributes="Bold"/>
+        <Label Text="WELCOME" TextColor="White" FontSize="25" FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" Margin="20"/>
         
         <Button x:Name="TTT_Button" Text="Game" TextColor="White" BackgroundColor="#b973bf" 
             FontAttributes="Bold" FontSize="15" 
-            HeightRequest="25" WidthRequest="100" Margin="15, 15, 15, 15"
+             WidthRequest="120" Margin="15, 15, 15, 15"
             Clicked="TTT_Button_Clicked"/>
         
         <Button x:Name="Calc_Button" Text="Calculator" TextColor="White" BackgroundColor="#739fbf" 
             FontAttributes="Bold" FontSize="15" 
-            HeightRequest="25" WidthRequest="100" Margin="15, 15, 15, 15"
+             WidthRequest="120" Margin="15, 15, 15, 15"
             Clicked="Calc_Button_Clicked"/>
 
+        <Image Source="pic.jpg" Aspect="AspectFill" MaximumHeightRequest="200" 
+               VerticalOptions="End" HorizontalOptions="Center" Margin="15"/>
     </StackLayout>
 
 </ContentPage>

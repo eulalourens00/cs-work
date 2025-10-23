@@ -6,25 +6,32 @@
     
     
     <StackLayout Padding="10" BackgroundColor="#8180e8">
-        <Label  Text="Let's solve your quadratic equation" TextColor="White" FontSize="16" FontAttributes="Bold"
-            VerticalOptions="Center"  HorizontalOptions="Center" />
-
-        <Button x:Name="Back" Text="▶" FontSize="20" FontAttributes="Bold"
-                HeightRequest="10" WidthRequest="10" Margin="20,10,20,10"
+        <HorizontalStackLayout Margin="10,20,10,10" VerticalOptions="Center" Padding="10">
+            
+            <Button x:Name="Back" Text="▶" FontSize="16" FontAttributes="Bold"
+                 WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent"
+                HorizontalOptions="Start" VerticalOptions="Start"
                 Clicked="Back_Clicked"/>
+            <Label  Text="Let's solve your quadratic equation" TextColor="White" FontSize="16" FontAttributes="Bold"
+            VerticalOptions="Center" HorizontalOptions="Center"/>
 
+            
+        </HorizontalStackLayout>
 
         <Entry x:Name="A" PlaceholderColor="#a3b0c9" Placeholder="Enter a value of X^2 (a)" Keyboard="Numeric" TextColor="White" BackgroundColor="#42557a"/>
         <Entry x:Name="B" PlaceholderColor="#a3b0c9" Placeholder="Enter a value of X (b)" Keyboard="Numeric" TextColor="White" BackgroundColor="#42557a"/>
         <Entry x:Name="C" PlaceholderColor="#a3b0c9" Placeholder="Enter an extra value (c)" Keyboard="Numeric" TextColor="White" BackgroundColor="#42557a"/>
 
         <Button x:Name="Solve" Text="Solve it" BackgroundColor="#88affc" TextColor="White"
-                HeightRequest="25" WidthRequest="100" HorizontalOptions="Center"
-                Margin="10,20,0,10"
+                 HorizontalOptions="Center" WidthRequest="100"
+                 Margin="10,15,10,10"
                 Clicked="Solve_Clicked"/>
         <ScrollView MaximumHeightRequest="200">
             <Label x:Name="Res" Text="Result is"
                TextColor="#a3b0c9" FontSize="14" BackgroundColor="#5a5ac7" Padding="10" Margin="10"/>
         </ScrollView>
+        <!--ехехех-->
+        <Image Source="pic.jpg" Aspect="AspectFill" MaximumHeightRequest="200" 
+            VerticalOptions="End" HorizontalOptions="Center" Margin="15"/>
     </StackLayout>
 </ContentPage>
