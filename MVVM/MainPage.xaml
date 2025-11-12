@@ -1,8 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MVVM.viewModels"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="MVVM.MainPage">
+    <ContentPage.BindingContext>
+        <viewModels:PersonVM />
+    </ContentPage.BindingContext>
 
-   
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Анкета сотрудника" 
+                   FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100">
+                <StackLayout>
+                    <Label Text="Last name *" FontAttributes="Bold" />
+                    <Entry Text="{Binding Person.lastName}" 
+                           Placeholder="Enter last name"
+                           ClearButtonVisibility="WhileEditing" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100">
+                <StackLayout>
+                    <Label Text="Name *" FontAttributes="Bold" />
+                    <Entry Text="{Binding Person.firstName}" 
+                           Placeholder="Enter name"
+                           ClearButtonVisibility="WhileEditing" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100">
+                <StackLayout>
+                    <Label Text="Middle name" FontAttributes="Bold" />
+                    <Entry Text="{Binding Person.fatherName}" 
+                           Placeholder="Enter middle name"
+                           ClearButtonVisibility="WhileEditing" />
+                </StackLayout>
+            </Frame>
+            
+            <!--ламинаат-->
+            <Frame HorizontalOptions="Start" BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100">
+                <StackLayout>
+                    <Label Text="Gender *" FontAttributes="Bold" />
+                    <Picker Title="Choose your gender" 
+                            ItemsSource="{Binding Gender}"
+                            SelectedItem="{Binding Person.gender}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Start" BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100" WidthRequest="160">
+                <StackLayout>
+                    <Label Text="Date of birth" FontAttributes="Bold" TextColor="black"/>
+                    <DatePicker Date="{Binding Person.birthday}" TextColor="black"
+                                MaximumDate="{x:Static system:DateTime.Today}"
+                                MinimumDate="01/01/1900" />
+                </StackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Start" BackgroundColor="Grey" Padding="15" CornerRadius="10" HeightRequest="100">
+                <StackLayout>
+                    <Label Text="Relationship status" FontAttributes="Bold" />
+                    <Picker Title="Choose status" 
+                            ItemsSource="{Binding Relationship_Status}"
+                            SelectedItem="{Binding Person.rel_status}" />
+                </StackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Start" BackgroundColor="Grey" Padding="15" CornerRadius="10">
+                <StackLayout>
+                    <Label Text="Extra information" FontAttributes="Bold" />
+                    <Editor Text="{Binding Person.extraInfo}" 
+                            Placeholder="Extra information..."
+                            AutoSize="TextChanges"
+                            MinimumHeightRequest="100" MinimumWidthRequest="400" />
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Сохранить" 
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#007BFF" TextColor="White" FontSize="16"
+                    CornerRadius="10" HeightRequest="25" WidthRequest="120"/>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
