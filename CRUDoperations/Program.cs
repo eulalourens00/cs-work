@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            
+            using (ApplicationContext cd = new ApplicationContext()) { 
+                
+
+            }
         }
     }
 }
