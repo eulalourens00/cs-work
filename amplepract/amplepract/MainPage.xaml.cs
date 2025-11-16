@@ -34,7 +34,6 @@ namespace amplepract
                 return;
             }
 
-            // Проверяем, является ли ввод числом
             if (int.TryParse(input, out int decimalNumber))
             {
                 HideError();
@@ -53,7 +52,6 @@ namespace amplepract
             OctalResult.Text = DecimalToOctal(decimalNumber);
             HexadecimalResult.Text = DecimalToHexadecimal(decimalNumber);
 
-            // Добавляем визуальное оформление для результатов
             BinaryResult.TextColor = Colors.DarkGreen;
             OctalResult.TextColor = Colors.DarkBlue;
             HexadecimalResult.TextColor = Colors.DarkRed;
@@ -80,8 +78,6 @@ namespace amplepract
         {
             ErrorLabel.IsVisible = false;
         }
-
-        // Конвертация в двоичную систему
         private string DecimalToBinary(int decimalNumber)
         {
             if (decimalNumber == 0) return "0";
@@ -99,8 +95,6 @@ namespace amplepract
 
             return isNegative ? $"-{binary}" : binary.ToString();
         }
-
-        // Конвертация в восьмеричную систему
         private string DecimalToOctal(int decimalNumber)
         {
             if (decimalNumber == 0) return "0";
@@ -118,8 +112,6 @@ namespace amplepract
 
             return isNegative ? $"-{octal}" : octal.ToString();
         }
-
-        // Конвертация в шестнадцатеричную систему
         private string DecimalToHexadecimal(int decimalNumber)
         {
             if (decimalNumber == 0) return "0";
