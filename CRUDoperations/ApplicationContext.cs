@@ -25,7 +25,25 @@ namespace CRUDoperations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
-            modelBuilder.Ignore<Country>();
+            //modelBuilder.Ignore<Country>();
+
+            //modelBuilder.Entity<User>().Property("Id").HasField("id");
+
+            //modelBuilder.Entity<User>().HasKey(u => u.Id).HasName("PK_Id");
+
+            modelBuilder.Entity<User>().ToTable(t => t.HasCheckConstraint("Name",
+                "Len(name <= 50)"));
+
+            modelBuilder.Entity<User>().Property(n => n.Name).HasMaxLength(30);
+
+
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Name = "Anna",
+                    PhoneNumber = "111"
+                });
         }
     }
 }
