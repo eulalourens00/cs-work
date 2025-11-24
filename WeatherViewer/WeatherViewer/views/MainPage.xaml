@@ -8,132 +8,79 @@
               RowSpacing="20"
               Padding="20">
 
-            <Label Grid.Row="0"
-                   Text="Погода"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="{StaticResource Primary}"/>
+            <Label Grid.Row="0" Text="Погода" FontSize="28" FontAttributes="Bold" 
+                   HorizontalOptions="Center" TextColor="{StaticResource Primary}"/>
 
             <!-- город -->
             <Frame Grid.Row="1"
-                   BackgroundColor="{DynamicResource Gray100}"
-                   CornerRadius="15"
-                   Padding="15"
-                   HasShadow="True">
+                   BackgroundColor="{DynamicResource Gray100}" CornerRadius="15" Padding="15">
                 <Grid ColumnDefinitions="*,Auto">
                     <Picker x:Name="CityPicker"
-                            Grid.Column="0"
-                            Title="Выберите город"
-                            ItemsSource="{Binding PopularCities}"
-                            ItemDisplayBinding="{Binding Name}"
+                            Grid.Column="0" 
+                            ItemsSource="{Binding PopularCities}" ItemDisplayBinding="{Binding Name}"
                             SelectedItem="{Binding SelectedCity, Mode=TwoWay}"
-                            BackgroundColor="Transparent"
-                           />
+                            BackgroundColor="Transparent"/>
 
                     <Button Grid.Column="1"
-                            Text="Обновить"
+                            Text="⟳" FontSize="28"
                             Command="{Binding LoadWeatherCommand}"
-                            CornerRadius="10"
-                            BackgroundColor="{StaticResource Primary}"
-                            TextColor="White"
-                            Padding="15,10"/>
+                            CornerRadius="10" HeightRequest="45" HorizontalOptions="Center"
+                            BackgroundColor="Transparent" TextColor="White" />
                 </Grid>
             </Frame>
 
             <ActivityIndicator Grid.Row="2"
-                               IsVisible="{Binding IsLoading}"
-                               IsRunning="{Binding IsLoading}"
-                               HorizontalOptions="Center"
-                               Color="{StaticResource Primary}"/>
+                               IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}"
+                               HorizontalOptions="Center" Color="{StaticResource Primary}"/>
 
             <!-- инф о погоде -->
-            <Frame Grid.Row="3"
-                   
-                   BackgroundColor="{StaticResource Primary}"
-                   CornerRadius="25"
-                   Padding="30"
-                   HasShadow="True">
+            <Frame Grid.Row="3"  BackgroundColor="{StaticResource Primary}" CornerRadius="25" Padding="30" >
 
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
                       RowSpacing="15">
 
-                    <Label Grid.Row="0"
-                           Text="{Binding CurrentWeather.City}"
-                           FontSize="28"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"/>
+                    <Label Grid.Row="0" Text="{Binding CurrentWeather.City}"
+                           FontSize="28" FontAttributes="Bold"
+                           TextColor="White" HorizontalOptions="Center"/>
 
-                    <Label Grid.Row="1"
-                           Text="{Binding CurrentWeather.Country}"
-                           FontSize="16"
-                           TextColor="White"
-                           Opacity="0.8"
-                           HorizontalOptions="Center"/>
+                    <Label Grid.Row="1" Text="{Binding CurrentWeather.Country}"
+                           FontSize="16" TextColor="White" Opacity="0.8" HorizontalOptions="Center"/>
 
                     <Label Grid.Row="2"
                            Text="{Binding CurrentWeather.Temperature, StringFormat='{0}°C'}"
-                           FontSize="64"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"/>
+                           FontSize="64" FontAttributes="Bold"
+                           TextColor="White" HorizontalOptions="Center"/>
 
-                    <Grid Grid.Row="3" 
-                          ColumnDefinitions="*,Auto,*"
-                          HorizontalOptions="Center">
+                    <Grid Grid.Row="3" ColumnDefinitions="*,Auto,*" HorizontalOptions="Center">
 
                         <Label Grid.Column="1"
                                Text="{Binding CurrentWeather.Description}"
-                               FontSize="18"
-                               TextColor="White"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center"/>
+                               FontSize="18" TextColor="White"
+                               HorizontalOptions="Center" VerticalOptions="Center"/>
                     </Grid>
 
-                    <Grid Grid.Row="4"
-                          ColumnDefinitions="*,*"
-                          ColumnSpacing="20">
+                    <Grid Grid.Row="4" ColumnDefinitions="*,*" ColumnSpacing="20">
 
-                        <Frame Grid.Column="0"
-                               BackgroundColor="#60FFFFFF"
-                               CornerRadius="15"
-                               Padding="15">
+                        <Frame Grid.Column="0" BackgroundColor="#60FFFFFF" CornerRadius="15" Padding="15">
                             <VerticalStackLayout Spacing="5">
-                                <Label Text="Влажность"
-                                       FontSize="12"
-                                       TextColor="White"
-                                       Opacity="0.8"/>
-                                <Label Text="{Binding CurrentWeather.Humidity, StringFormat='{0}%'}"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="White"/>
+                                <Label Text="Влажность" FontSize="12" TextColor="White" Opacity="0.8"/>
+                                
+                                <Label Text="{Binding CurrentWeather.Humidity, StringFormat='{0}%'}" FontSize="16" FontAttributes="Bold" TextColor="White"/>
                             </VerticalStackLayout>
                         </Frame>
 
-                        <Frame Grid.Column="1"
-                               BackgroundColor="#60FFFFFF"
-                               CornerRadius="15"
-                               Padding="15">
+                        <Frame Grid.Column="1" BackgroundColor="#60FFFFFF" CornerRadius="15" Padding="15">
                             <VerticalStackLayout Spacing="5">
-                                <Label Text="Ветер"
-                                       FontSize="12"
-                                       TextColor="White"
-                                       Opacity="0.8"/>
+                                <Label Text="Ветер" FontSize="12" TextColor="White" Opacity="0.8"/>
                                 <Label Text="{Binding CurrentWeather.WindSpeed, StringFormat='{0} м/с'}"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="White"/>
+                                       FontSize="16" FontAttributes="Bold" TextColor="White"/>
                             </VerticalStackLayout>
                         </Frame>
                     </Grid>
 
                     <Label Grid.Row="5"
                            Text="{Binding CurrentWeather.LastUpdated, StringFormat='Обновлено: {0:HH:mm}'}"
-                           FontSize="12"
-                           TextColor="White"
-                           Opacity="0.6"
-                           HorizontalOptions="Center"/>
+                           FontSize="12" TextColor="White"  Opacity="0.6" HorizontalOptions="Center"/>
                 </Grid>
             </Frame>
         </Grid>
