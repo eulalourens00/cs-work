@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ballon.MainPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Frame CornerRadius="10"  Padding="20" BackgroundColor="#d4bcc2"
+               HorizontalOptions="Center" WidthRequest="300" HeightRequest="300">
+                <Grid>
+                    <Frame x:Name="BallContainer" 
+                       BackgroundColor="#940c2c"
+                       CornerRadius="150"
+                       WidthRequest="200"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                        <Frame.Clip>
+                            <EllipseGeometry Center="100,100" 
+                                       RadiusX="100" 
+                                       RadiusY="100"/>
+                        </Frame.Clip>
+
+                        <Label x:Name="PatternLabel" 
+                               Text="❄️"
+                               FontSize="60"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               IsVisible="False"/>
+                    </Frame>
+
+                    <BoxView Color="#ded94e"
+                         WidthRequest="30"
+                         HeightRequest="15"
+                         CornerRadius="15,15,0,0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Start"
+                         Margin="0,-10,0,0"/>
+                </Grid>
+            </Frame>
+
+            <Label Text="Форма" FontSize="16" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Форма" 
+                    WidthRequest="85"
+                    HeightRequest="70"
+                    CornerRadius="50"
+                    Clicked="OnShapeChanged"
+                    CommandParameter="Circle"/>
+                <Button Text="Форма" 
+                    WidthRequest="80"
+                    HeightRequest="60"
+                    CornerRadius="30"
+                    Clicked="OnShapeChanged"
+                    CommandParameter="Drop"/>
+                <Button Text="Форма" 
+                    WidthRequest="80"
+                    HeightRequest="60"
+                    CornerRadius="50"
+                    Clicked="OnShapeChanged"
+                    CommandParameter="Oval"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Цвет" FontSize="16" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="Red"
+                    Clicked="OnColorChanged"
+                    CommandParameter="Red"/>
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="Blue"
+                    Clicked="OnColorChanged"
+                    CommandParameter="Blue"/>
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="Green"
+                    Clicked="OnColorChanged"
+                    CommandParameter="Green"/>
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="Yellow"
+                    Clicked="OnColorChanged"
+                    CommandParameter="Yellow"/>
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="White"
+                    Clicked="OnColorChanged"
+                    CommandParameter="White"/>
+                <Button Text="" 
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="Pink"
+                    Clicked="OnColorChanged"
+                    CommandParameter="Pink"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Узор" FontSize="16" FontAttributes="Bold"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Ёлка" 
+                    MinimumWidthRequest="90"
+                    HeightRequest="40"
+                    Clicked="OnPatternChanged"
+                    CommandParameter="stripes"/>
+                <Button Text="Снежинки" 
+                    MinimumWidthRequest="90"
+                    HeightRequest="40"
+                    Clicked="OnPatternChanged"
+                    CommandParameter="snowflake"/>
+                <Button Text="Звездочки" 
+                    MinimumWidthRequest="90"
+                    HeightRequest="40"
+                    Clicked="OnPatternChanged"
+                    CommandParameter="star"/>
+                <Button Text="Нет" 
+                    MinimumWidthRequest="90"
+                    HeightRequest="40"
+                    Clicked="OnPatternChanged"
+                    CommandParameter="none"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Прозрачность узора" FontSize="16" FontAttributes="Bold"/>
+            <Slider x:Name="OpacitySlider"
+                Minimum="0"
+                Maximum="1"
+                Value="0.8"
+                ValueChanged="OnOpacityChanged"/>
+            <Label x:Name="OpacityLabel" 
+               Text="80%"
+               HorizontalOptions="Center"/>
+
+            <Button Text="Сохранить" 
+                BackgroundColor="DarkBlue"
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="10"
+                Margin="0,20,0,0"
+                Clicked="OnSaveButtonClicked"/>
+
+            <Label x:Name="SaveMessage" 
+               Text=""
+               TextColor="Green"
+               IsVisible="False"
+               HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
