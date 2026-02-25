@@ -119,6 +119,9 @@ namespace selenium
                         if (string.IsNullOrEmpty(text) || text.Length < 3)
                             continue;
 
+                        if (IsServiceLink(text, href))
+                            continue;
+
                         resultCount++;
 
                         if (text.Contains("Яндекс Музыка") || text.Contains("Яндекс.Музыка") ||
@@ -133,7 +136,6 @@ namespace selenium
                     catch { }
                 }
 
-                if (!foundYandexMusic) Console.WriteLine("Не найдено");
             }
             finally
             {  driver.Quit(); }
