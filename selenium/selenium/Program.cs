@@ -63,7 +63,6 @@ namespace selenium
             try
             {
                 driver.Navigate().GoToUrl("https://yandex.ru");
-                driver.Manage().Window.Maximize();
 
                 ClosePop();
 
@@ -108,7 +107,6 @@ namespace selenium
 
                 bool foundYandexMusic = false;
                 int resultCount = 0;
-                int serviceLinksSkipped = 0;
 
 
                 foreach (var link in allLinks)
@@ -120,12 +118,6 @@ namespace selenium
 
                         if (string.IsNullOrEmpty(text) || text.Length < 3)
                             continue;
-
-                        if (IsServiceLink(text, href))
-                        {
-                            serviceLinksSkipped++;
-                            continue;
-                        }
 
                         resultCount++;
 
@@ -142,8 +134,6 @@ namespace selenium
                 }
 
                 if (!foundYandexMusic) Console.WriteLine("Не найдено");
-
-                Thread.Sleep(5000);
             }
             finally
             {  driver.Quit(); }
