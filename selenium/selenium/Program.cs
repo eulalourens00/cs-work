@@ -6,80 +6,147 @@ namespace selenium
 {
     internal class Program
     {
+        static IWebDriver driver = new ChromeDriver();
+        static WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+        //плашка с установкой
+        static void ClosePop()
+        {
+            try
+            {
+                var closeButton = driver.FindElement(By.CssSelector("span[aria-label='Закрыть']"));
+                if (closeButton != null && closeButton.Displayed)
+                {
+                    closeButton.Click();
+                    Thread.Sleep(1000);
+                }
+            }
+            catch (Exception ex) { }
+
+        }
+
+        static bool IsServiceLink(string text, string href)
+        {
+            // служебные ссылки
+            string[] serviceWords = {
+                "войти", "вход", "регистрация", "скачать", "установите",
+                "браузер", "алиса", "картинки", "видео", "карты", "товары",
+                "финансы", "квартиры", "переводчик", "ещё", "все сервисы",
+                "почта", "маркет", "войти", "загрузки", "приложение"
+            };
+
+            string lowerText = text.ToLower();
+            string lowerHref = href.ToLower();
+
+            foreach (string word in serviceWords)
+            {
+                if (lowerText.Contains(word) || lowerHref.Contains(word))
+                    return true;
+            }
+
+            if (lowerHref.Contains("passport.yandex") ||
+                lowerHref.Contains("yabs.yandex") ||
+                lowerHref.Contains("yandex.ru/count") ||
+                lowerHref.Contains("yandex.ru/search?text=") && lowerText.Length < 10 ||
+                lowerHref.Contains("/campaign/") ||
+                lowerHref.Contains("from=tabbar") ||
+                lowerHref.Contains("source=tabbar"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         static void Main(string[] args)
         {
-            WebDriver driver = new ChromeDriver();
-
             try
             {
                 driver.Navigate().GoToUrl("https://yandex.ru");
+                driver.Manage().Window.Maximize();
 
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                ClosePop();
 
-                try
-                {
-                    var closeButton = wait.Until(d =>
-                        d.FindElement(By.XPath("//button[contains(text(),'Не сейчас')] | //button[contains(text(),'Закрыть')] | //div[contains(@class,'close')]"))
-                    );
-                    closeButton.Click();
-                    Console.WriteLine("Окно 'Сделать Яндекс основным' закрыто");
+                wait.Until(d => d.FindElement(By.CssSelector("iframe.dzen-search-arrow-common__frame")));
+                ClosePop();
 
-                    Thread.Sleep(1000);
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    Console.WriteLine("Окно 'Сделать Яндекс основным' не появилось, продолжаем тест");
-                }
+                var searchFrame = driver.FindElement(By.CssSelector("iframe.dzen-search-arrow-common__frame"));
+                driver.SwitchTo().Frame(searchFrame);
 
-                try
-                {
-                    driver.FindElement(By.Id("confirmexample")).Click();
+                var searchInput = wait.Until(d =>
+                    d.FindElement(By.CssSelector("input.arrow__input.mini-suggest__input[name='text']"))
+                );
 
-                    driver.SwitchTo().Alert().Dismiss();
+                searchInput.Clear();
+                searchInput.SendKeys("музыка");
 
-                    bool result = bool.Parse(driver.FindElement(By.Id("confirmreturn")).Text);
-                    string clickedButton = driver.FindElement(By.Id("confirmexplanation")).Text;
-
-                    if (!result && clickedButton.Contains("You clicked Cancel"))
-                    {  Console.WriteLine("Alert тест пройден успешно");}
-                    else
-                    {  Console.WriteLine("Alert тест не пройден"); }
-                }
-                catch (NoSuchElementException)
-                { Console.WriteLine("Элемент confirmexample не найден, пропускаем alert тест"); }
+                int originalTabsCount = driver.WindowHandles.Count;
 
                 try
                 {
-                    IWebElement searchInput = wait.Until(d => d.FindElement(By.Name("text")));
-                    searchInput.SendKeys("музыка");
-
-                    IWebElement searchButton = driver.FindElement(By.CssSelector("button[type='submit']"));
+                    var searchButton = driver.FindElement(By.CssSelector("button.arrow__button[type='submit']"));
                     searchButton.Click();
-
-                    wait.Until(d => d.FindElement(By.CssSelector(".serp-item")));
-
-                    var firstLink = driver.FindElement(By.CssSelector(".serp-item:first-child a"));
-                    string linkText = firstLink.Text;
-
-                    if (linkText.Contains("Яндекс Музыка") || linkText.Contains("Music"))
-                    {
-                        Console.WriteLine("Тест пройден! Яндекс Музыка первая в списке");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Тест не пройден. Первая ссылка: {linkText}");
-                    }
                 }
-                catch (Exception ex)
-                { Console.WriteLine($"Ошибка при выполнении поиска: {ex.Message}"); }
-            }
-            catch (Exception ex)
-            {  Console.WriteLine($"Общая ошибка теста: {ex.Message}"); }
-            finally
-            {
+                catch
+                {
+                    searchInput.SendKeys(Keys.Enter);
+                }
+
+                driver.SwitchTo().DefaultContent();
+                ClosePop();
+
+                wait.Until(d => d.WindowHandles.Count > originalTabsCount);
+
+                string newTab = driver.WindowHandles.Last();
+                driver.SwitchTo().Window(newTab);
+
+                wait.Until(d => d.Url.Contains("yandex.ru/search") || d.Url.Contains("search"));
+
                 Thread.Sleep(3000);
-                driver.Quit();
+
+                var allLinks = driver.FindElements(By.TagName("a"));
+
+                bool foundYandexMusic = false;
+                int resultCount = 0;
+                int serviceLinksSkipped = 0;
+
+
+                foreach (var link in allLinks)
+                {
+                    try
+                    {
+                        string text = link.Text;
+                        string href = link.GetAttribute("href") ?? "";
+
+                        if (string.IsNullOrEmpty(text) || text.Length < 3)
+                            continue;
+
+                        if (IsServiceLink(text, href))
+                        {
+                            serviceLinksSkipped++;
+                            continue;
+                        }
+
+                        resultCount++;
+
+                        if (text.Contains("Яндекс Музыка") || text.Contains("Яндекс.Музыка") ||
+                            (text.Contains("Музыка") && href.Contains("music.yandex")) ||
+                            href.Contains("music.yandex.ru"))
+                        {
+                            Console.WriteLine($"Яндекс Музыка - {resultCount} ссылка");
+                            foundYandexMusic = true;
+                            break;
+                        }
+                    }
+                    catch { }
+                }
+
+                if (!foundYandexMusic) Console.WriteLine("Не найдено");
+
+                Thread.Sleep(5000);
             }
+            finally
+            {  driver.Quit(); }
         }
     }
 }
