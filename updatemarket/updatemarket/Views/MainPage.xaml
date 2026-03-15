@@ -14,11 +14,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <ImageButton x:Name="menuButton" Style="{StaticResource ImgBtn}" Source="meenu.png" Grid.Column="0" />
+                <ImageButton Style="{StaticResource ImgBtn}" Source="meenu.png" Grid.Column="0" />
 
                 <Image Grid.Column="1" Source="logo.png" Style="{StaticResource Logo}" />
 
-                <ImageButton x:Name="bagButton" Style="{StaticResource ImgBtn}" Grid.Column="2" Source="bgg.png"/>
+                <ImageButton Style="{StaticResource ImgBtn}" Grid.Column="2" Source="bgg.png"/>
             </Grid>
 
             <!--КУБИКИ С ПРОДАЖАМИ-->
