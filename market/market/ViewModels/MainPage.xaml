@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="market.ViewModels.MainPage"
-             BackgroundColor="{StaticResource Background}">
+             
+             BackgroundColor="{StaticResource BackgroundCC}">
 
-    <ScrollView Background="Transparent">
+    <ScrollView>
         <VerticalStackLayout>
 
             <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
@@ -15,21 +16,21 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="0" CornerRadius="28">
-                    <ImageButton x:Name="menuButton" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent"
-                            Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png" Aspect="AspectFill"
+                <Frame Style="{StaticResource DefFrame}" Grid.Column="0">
+                    <ImageButton x:Name="menuButton" Style="{StaticResource ImgBtn}"
+                            Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//menu.png"
                     ></ImageButton>
                 </Frame>
 
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="1">
+                <Frame Style="{StaticResource DefFrame}" Grid.Column="1">
                     <Image Aspect="Center" IsOpaque="False"
                            Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//logo.png" 
                            HeightRequest="20" WidthRequest="150" />
                 </Frame>
 
-                <Frame BackgroundColor="Transparent" BorderColor="Transparent" Grid.Column="2" CornerRadius="28">
-                    <ImageButton x:Name="bagButton" HeightRequest="56" WidthRequest="56" BackgroundColor="Transparent"
-                         Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png" Aspect="AspectFill" 
+                <Frame Style="{StaticResource DefFrame}" Grid.Column="2">
+                    <ImageButton x:Name="bagButton" Style="{StaticResource ImgBtn}"
+                         Source="C://cs-work//cs-work//ClothingStoreApp//Resources//Images//bag.png"
                     ></ImageButton>
                 </Frame>
             </Grid>

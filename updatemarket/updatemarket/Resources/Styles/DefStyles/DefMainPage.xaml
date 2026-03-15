@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="updatemarket.Resources.Styles.DefStyles.DefMainPage">
+
+    <Color x:Key="BackgroundCC">#F5F6F1</Color>
+
+
+    <!--//frame for clothes-->
+    <Style x:Key="FrameForClothes" TargetType="Frame">
+        <Setter  Property="CornerRadius" Value="20"/>
+        <Setter Property="BackgroundColor" Value="#E6E5E3"/>
+    </Style>
+
+    <Style x:Key="DefFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="CornerRadius" Value="28"/>
+    </Style>
+
+    <Style x:Key="ImgBtn" TargetType="ImageButton">
+        <Setter Property="MinimumWidthRequest" Value="46"/>
+        <Setter Property="MinimumHeightRequest" Value="46"/>
+        <Setter Property="Aspect" Value="AspectFill"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="Logo" TargetType="Image">
+        <Setter Property="MaximumHeightRequest" Value="18"/>
+        <Setter Property="MaximumWidthRequest" Value="92"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+    </Style>
+    
+    <!--yellow orange rec-->
+    <Style x:Key="ColorRectangle" TargetType="Frame">
+        <Setter Property="MaximumHeightRequest" Value="169"/>
+        <Setter Property="MaximumWidthRequest" Value="169"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="ColorLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontFamily" Value="MonumentExtended"/>
+        <Setter Property="MinimumWidthRequest" Value="100"/>
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
+        <Setter Property="MaxLines" Value="2"/>
+    </Style>
+
+    <Style x:Key="ColorZelox" TargetType="Label">
+        <Setter Property="Text" Value="Zelox"/>
+        <Setter Property="FontSize" Value="51"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontFamily" Value="MonumentExtended"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="LineBreakMode" Value="NoWrap"/>
+        <Setter Property="MaxLines" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="Margin" Value="0,25,0,0"/>
+    </Style>
+
+    <Style x:Key="Strelki" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFit"/>
+        <Setter Property="MaximumHeightRequest" Value="23"/>
+        <Setter Property="MaximumWidthRequest" Value="48"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+    </Style>
+    
+    <!--glamur курточки-->
+    <Style x:Key="MainCard" TargetType="Frame">
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="MaximumHeightRequest" Value="273"/>
+        <Setter Property="MaximumWidthRequest" Value="350"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <Style x:Key="GlamurCard" TargetType="ImageButton">
+        <Setter Property="MaximumHeightRequest" Value="273"/>
+        <Setter Property="MaximumWidthRequest" Value="350"/>
+        <Setter Property="Aspect" Value="AspectFill"/>
+    </Style>
+
+    <Style x:Key="GlamurLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="MaximumHeightRequest" Value="38"/>
+        <Setter Property="FontFamily" Value="MonumentExtended"/>
+    </Style>
+
+    <Style x:Key="Price" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="MaximumHeightRequest" Value="38"/>
+        <Setter Property="MaximumWidthRequest" Value="103"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="PriceLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="#EB6434"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+
+    <!--rating-->
+    <Style x:Key="RatingFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="MaximumHeightRequest" Value="30"/>
+        <Setter Property="MaximumWidthRequest" Value="70"/>
+        <Setter Property="Margin" Value="0,10,10,0"/>
+        <Setter Property="CornerRadius" Value="11"/>
+    </Style>
+
+    <Style x:Key="Star" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFit"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="MaximumHeightRequest" Value="13"/>
+        <Setter Property="MaximumWidthRequest" Value="13"/>
+    </Style>
+
+    <Style x:Key="RatingCount" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="MaximumHeightRequest" Value="15"/>
+        <Setter Property="MaximumWidthRequest" Value="30"/>
+    </Style>
+    
+    <!--корзинка-->
+    <Style x:Key="Bag" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFit"/>
+        <Setter Property="HeightRequest" Value="45"/>
+        <Setter Property="WidthRequest" Value="47"/>
+    </Style>
+
+    <Style x:Key="bagFrame" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Black"    />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="HorizontalOptions" Value="End"/>
+        <Setter Property="HeightRequest" Value="55"/>
+        <Setter Property="WidthRequest" Value="55"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="CornerRadius" Value="15"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="updatemarket.MainPage"
+             BackgroundColor="{StaticResource BackgroundCC}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            
+            <Grid Padding="30,10,30,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton x:Name="menuButton" Style="{StaticResource ImgBtn}" Source="meenu.png" Grid.Column="0" />
+
+                <Image Grid.Column="1" Source="logo.png" Style="{StaticResource Logo}" />
+
+                <ImageButton x:Name="bagButton" Style="{StaticResource ImgBtn}" Grid.Column="2" Source="bgg.png"/>
+            </Grid>
+
+            <!--КУБИКИ С ПРОДАЖАМИ-->
+            <Grid Padding="15" ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" Style="{StaticResource ColorRectangle}" BackgroundColor="#F4C600">
+                    <Grid Padding="10,10,10,10">
+                        <Label Text="TRENDING PRODUCTS" Style="{StaticResource ColorLabel}"/>
+                        <Label Style="{StaticResource ColorZelox}" ></Label>
+                        <Image Source="strelka1.png" Style="{StaticResource Strelki}"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Column="2" Style="{StaticResource ColorRectangle}" BackgroundColor="#EB6434">
+                    <Grid Padding="10,10,10,10">
+                        <Label Text="SALE PRODUCTS" Style="{StaticResource ColorLabel}"/>
+                        <Label Style="{StaticResource ColorZelox}" ></Label>
+                        <Image Source="strelka2.png" Style="{StaticResource Strelki}"/>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+
+            <Label Padding="40,10,40,0" Text="POPULAR PRODUCTS" TextColor="Black" FontAttributes="Bold"  FontSize="18" FontFamily="MonumentExtended"/>
+
+            <!--КУРТОЧКИ ГЛАМУРНЫЕ-->
+            <VerticalStackLayout Padding="30,20,20,0" Spacing="20">
+
+                <Frame Style="{StaticResource MainCard}">
+                    <Grid>
+                        <ImageButton Style="{StaticResource GlamurCard}"  Source="kurtka.png"></ImageButton>
+
+                        <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
+                            
+                            <Label Text="Avoine Hooded&#10;Quilted Jacket" Style="{StaticResource GlamurLabel}"/>
+
+                            <!--пипец цифры-->
+                            <Frame Style="{StaticResource Price}">
+                                <Label Style="{StaticResource PriceLabel}"/>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                        
+                        <!--жестко оцениваем-->
+                        <Frame Style="{StaticResource RatingFrame}" >
+
+                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                <Image Source="star.png" Style="{StaticResource Star}"/>
+
+                                <Label Style="{StaticResource RatingCount}"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        <Frame Style="{StaticResource bagFrame}">
+                            <Image Source="baag.png" Style="{StaticResource Bag}"/>
+                        </Frame>
+                    </Grid>
+
+                </Frame>
+
+
+                <!--писец 2-->
+                <Frame Style="{StaticResource MainCard}">
+                    <Grid>
+                        <Image Aspect="AspectFill" Source="glamurkurtka.png"/>
+
+                        <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
+                            <Label Text="Hooded Metallic&#10;Shell Jacket" Style="{StaticResource GlamurLabel}"/>
+
+                            <!--пипец цифры2-->
+                            <Frame Style="{StaticResource Price}">
+                                <Label Style="{StaticResource PriceLabel}"/>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                        
+                        <!--жестко оцениваем2-->
+                        <Frame Style="{StaticResource RatingFrame}">
+
+                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
+                                <Image Source="star.png" Style="{StaticResource Star}"/>
+
+                                <Label Style="{StaticResource RatingCount}"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+
+                        <Frame Style="{StaticResource bagFrame}">
+                            <Image Source="baag.png" Style="{StaticResource Bag}"/>
+                        </Frame>
+                        
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
