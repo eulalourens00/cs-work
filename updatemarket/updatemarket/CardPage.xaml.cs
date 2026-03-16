@@ -1,4 +1,4 @@
-namespace updatemarket.Views;
+namespace updatemarket;
 
 public partial class CardPage : ContentPage
 {

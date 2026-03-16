@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="updatemarket.Views.CardPage"
+             x:Class="updatemarket.CardPage"
              BackgroundColor="{StaticResource BackgroundCC}">
     <ScrollView Background="Transparent">
         <VerticalStackLayout>
@@ -95,26 +95,19 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Frame Grid.Column="0" HeightRequest="122" WidthRequest="169" CornerRadius="10" BackgroundColor="#F5F5F5" BorderColor="Transparent">
-                    <Grid Padding="10,10,10,10">
-                        <Label FontSize="14" Text="CHOOSE&#10;COLOR" TextColor="#000000" MinimumWidthRequest="112"/>
+                <Frame Grid.Column="0" Style="{StaticResource ChangedColorFrame}">
+                    <Grid Padding="10">
+                        <Label Text="CHOOSE&#10;COLOR" Style="{StaticResource NameCard}"/>
 
-                        <Label FontSize="51"
-                            Text="Zelox" TextColor="#0000001A" Opacity="0.1"
-                            LineBreakMode="NoWrap" MaxLines="1"
-                            Margin="0,25,0,0"
-                            HorizontalOptions="Start"
-                            VerticalOptions="Start"></Label>
+                        <Label Style="{StaticResource ColorZelox}" ></Label>
 
                         <Frame Margin="0,45,0,0" BorderColor="Transparent" BackgroundColor="#000000"
                                    Padding="10,8,5,10" HeightRequest="32" WidthRequest="110" HorizontalOptions="Start">
                             <HorizontalStackLayout Spacing="9">
 
-                                <Label Text="BEIGE" TextColor="#FFFFFF"
-                                           FontSize="12"/>
+                                <Label Text="BEIGE" TextColor="#FFFFFF" FontSize="12"/>
 
-                                <Frame HeightRequest="16" WidthRequest="37"
-                                           BackgroundColor="#EFEEEA" BorderColor="Transparent"/>
+                                <Frame HeightRequest="16" WidthRequest="37" BackgroundColor="#EFEEEA" BorderColor="Transparent"/>
 
                             </HorizontalStackLayout>
                         </Frame>
@@ -122,25 +115,17 @@
                     </Grid>
                 </Frame>
 
-                <Frame Grid.Column="2" HeightRequest="122" WidthRequest="169" CornerRadius="10"
-           BackgroundColor="#000000" BorderColor="Transparent">
+                <Frame Grid.Column="2" Style="{StaticResource ChangedColorFrame}">
 
                     <Grid Padding="10,10,10,10">
-                        <Label FontSize="14" Text="CHOOSE&#10;SIZE" TextColor="#FFFFFF" MinimumWidthRequest="112"/>
+                        <Label Text="CHOOSE&#10;SIZE" TextColor="#FFFFFF" Style="{StaticResource NameCard}"/>
 
-                        <Label FontSize="51"
-                           Text="Zelox" TextColor="#0000001A" Opacity="0.1"
-                           Margin="0,25,0,0"
-                           LineBreakMode="NoWrap" MaxLines="1"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Start"
-                        ></Label>
+                        <Label Style="{StaticResource ColorZelox}" ></Label>
 
                         <Frame Margin="0,45,0,0" BorderColor="Transparent" BackgroundColor="white"
-                                   Padding="10,8,5,10" HeightRequest="30" WidthRequest="110" HorizontalOptions="Start">
+                                   Padding="5" HeightRequest="30" WidthRequest="110" HorizontalOptions="Start">
                             <HorizontalStackLayout Spacing="9">
-                                <Label Text="MEDIUM" TextColor="black"
-                                           FontSize="12"/>
+                                <Label Text="MEDIUM" TextColor="black"  FontSize="12"/>
 
                             </HorizontalStackLayout>
                         </Frame>
@@ -150,8 +135,7 @@
             </Grid>
 
             <Grid>
-                <Frame BackgroundColor="#EB6434" CornerRadius="15" HeightRequest="82" WidthRequest="350"
-                       Margin="0,20,0,10" BorderColor="Transparent">
+                <Frame Style="{StaticResource CheckOutFrame}"  Margin="0,20,0,10">
                     <Label Text="CHEKOUT" TextColor="white" Padding="10,10,0,0"></Label>
                 </Frame>
                 <Label Text="$ 1500" TextColor="black" HorizontalOptions="End" Margin="30,50,70,0"></Label>
