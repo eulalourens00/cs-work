@@ -11,6 +11,11 @@
                 <ResourceDictionary Source="/Resources/Styles/DefStyles/DefMainPage.xaml"/>
                 <ResourceDictionary Source="/Resources/Styles/DefStyles/DefCardpage.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="MonumentExtended"/>
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

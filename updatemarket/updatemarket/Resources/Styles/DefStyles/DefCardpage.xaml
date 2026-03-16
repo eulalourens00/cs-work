@@ -10,6 +10,7 @@
 
     <Style x:Key="BigFrame" TargetType="Frame">
         <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="CornerRadius" Value="20"/>
@@ -18,16 +19,17 @@
     </Style>
 
     <Style x:Key="MiniCards" TargetType="Frame">
-        <Setter Property="BorderColor" Value="White"/>
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="MaximumHeightRequest" Value="110"/>
         <Setter Property="MaximumWidthRequest" Value="110"/>
     </Style>
 
     <Style x:Key="SavedCard" TargetType="Image">
-        <Setter Property="Aspect" Value="AspectFill"/>
-        <Setter Property="MaximumHeightRequest" Value="25"/>
-        <Setter Property="MaximumWidthRequest" Value="25"/>
+        <Setter Property="Aspect" Value="AspectFit"/>
+        <Setter Property="MaximumHeightRequest" Value="20"/>
+        <Setter Property="MaximumWidthRequest" Value="20"/>
     </Style>
 
     <Style x:Key="ChangedColorFrame" TargetType="Frame">
@@ -35,7 +37,7 @@
         <Setter Property="MaximumWidthRequest" Value="170"/>
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="BorderColor" Value="Transparent"/>
-        <Setter Property="BackgroundColor" Value="#F5F5F5"/>
+        <Setter Property="BackgroundColor" Value="#DCDCDC"/>
     </Style>
 
     <Style x:Key="NameCard" TargetType="Label">
