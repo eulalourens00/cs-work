@@ -20,7 +20,7 @@
 
     <Style x:Key="ImgBtn" TargetType="ImageButton">
         <Setter Property="MinimumWidthRequest" Value="46"/>
-        <Setter Property="MinimumHeightRequest" Value="46"/>
+        <Setter Property="MaximumHeightRequest" Value="46"/>
         <Setter Property="Aspect" Value="AspectFill"/>
         <Setter Property="BackgroundColor" Value="Transparent"/>
     </Style>
@@ -116,9 +116,7 @@
     <Style x:Key="RatingFrame" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="White"/>
         <Setter Property="BorderColor" Value="Transparent"/>
-        <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions" Value="End"/>
-        <Setter Property="MaximumHeightRequest" Value="50"/>
         <Setter Property="MaximumWidthRequest" Value="170"/>
 
         <Setter Property="CornerRadius" Value="11"/>

@@ -84,8 +84,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Frame Grid.Column="0" BorderColor="Transparent" BackgroundColor="Transparent">
-                    <Label Text="{Binding Product.Name}"  TextColor="Black" FontSize="22" MaximumWidthRequest="320"
-                     HorizontalTextAlignment="Start" Padding="10"/>
+                    <Label Text="{Binding Product.Name}"  Style="{StaticResource ColorLabel}" TextColor="Black"/>
                 </Frame>
                 
                 <Frame Grid.Column="1" BorderColor="Transparent" BackgroundColor="Transparent">

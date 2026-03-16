@@ -4,11 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:updatemarket"
-    Shell.FlyoutBehavior="Disabled">
+    FlyoutBehavior="Flyout"
+    FlyoutWidth="250">
 
-    <ShellContent
+
+    <FlyoutItem Title="Главная" Icon="meenu.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
+                Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Зеркальное число" Icon="bgg.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ChangedNumberPage}" 
+                Route="ChangedNumberPage" />
+    </FlyoutItem>
+
+    <!--<ShellContent
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
     
     <ShellContent
         ContentTemplate="{DataTemplate local:CardPage}"

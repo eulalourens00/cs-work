@@ -19,7 +19,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <ImageButton Style="{StaticResource ImgBtn}" Source="meenu.png" Grid.Column="0" />
+                <ImageButton Style="{StaticResource ImgBtn}" MaximumHeightRequest="46" MaximumWidthRequest="46" Source="pets.png"  Grid.Column="0" />
 
                 <Image Grid.Column="1" Source="logo.png" Style="{StaticResource Logo}" />
 
@@ -57,7 +57,7 @@
             <!--КУРТОЧКИ ГЛАМУРНЫЕ-->
             <VerticalStackLayout Padding="30,20,20,0" Spacing="20">
 
-                <Frame Style="{StaticResource MainCard}">
+                <Frame Style="{StaticResource MainCard}" BorderColor="Transparent" BackgroundColor="Transparent">
                     <Frame.BindingContext>
                         <Binding Path="PopularProducts[0]" />
                     </Frame.BindingContext>
@@ -90,7 +90,7 @@
                     </Grid>
                 </Frame>
 
-                <Frame Style="{StaticResource MainCard}">
+                <Frame Style="{StaticResource MainCard}" BorderColor="Transparent" BackgroundColor="Transparent">
                     <Frame.BindingContext>
                         <Binding Path="PopularProducts[1]" />
                     </Frame.BindingContext>
