@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:updatemarket.ViewModels"
              x:Class="updatemarket.MainPage"
              BackgroundColor="{StaticResource BackgroundCC}">
 
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
     <ScrollView>
         <VerticalStackLayout>
             
@@ -53,66 +58,69 @@
             <VerticalStackLayout Padding="30,20,20,0" Spacing="20">
 
                 <Frame Style="{StaticResource MainCard}">
+                    <Frame.BindingContext>
+                        <Binding Path="PopularProducts[0]" />
+                    </Frame.BindingContext>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer 
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ProductSelectedCommand}"
+                CommandParameter="{Binding .}"/>
+                    </Frame.GestureRecognizers>
+
                     <Grid>
-                        <ImageButton Style="{StaticResource GlamurCard}"  Source="kurtka.png"></ImageButton>
+                        <Image Style="{StaticResource GlamurCard}"  
+                         Source="{Binding ImageUrl}" />
 
                         <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
-                            
-                            <Label Text="Avoine Hooded&#10;Quilted Jacket" Style="{StaticResource GlamurLabel}"/>
-
-                            <!--пипец цифры-->
+                            <Label Text="{Binding Name}" Style="{StaticResource GlamurLabel}"/>
                             <Frame Style="{StaticResource Price}">
-                                <Label Style="{StaticResource PriceLabel}"/>
+                                <Label Text="{Binding FormattedPrice}" Style="{StaticResource PriceLabel}"/>
                             </Frame>
-
                         </VerticalStackLayout>
-                        
-                        <!--жестко оцениваем-->
-                        <Frame Style="{StaticResource RatingFrame}" >
 
-                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
-                                <Image Source="star.png" Style="{StaticResource Star}"/>
+                        <HorizontalStackLayout Margin="12" Spacing="5" HorizontalOptions="End">
+                            <Image Source="star.png" Style="{StaticResource Star}"/>
+                            <Label Text="{Binding Rating}" Style="{StaticResource RatingCount}"/>
+                        </HorizontalStackLayout>
 
-                                <Label Style="{StaticResource RatingCount}"/>
-                            </HorizontalStackLayout>
-                        </Frame>
                         <Frame Style="{StaticResource bagFrame}">
                             <Image Source="baag.png" Style="{StaticResource Bag}"/>
                         </Frame>
                     </Grid>
-
                 </Frame>
 
-
-                <!--писец 2-->
                 <Frame Style="{StaticResource MainCard}">
+                    <Frame.BindingContext>
+                        <Binding Path="PopularProducts[1]" />
+                    </Frame.BindingContext>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer 
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MainPageViewModel}}, Path=ProductSelectedCommand}"
+                CommandParameter="{Binding .}"/>
+                    </Frame.GestureRecognizers>
+
                     <Grid>
-                        <Image Aspect="AspectFill" Source="glamurkurtka.png"/>
+                        <Image Style="{StaticResource GlamurCard}"  
+                   Source="{Binding ImageUrl}" 
+                   Aspect="AspectFill"/>
 
                         <VerticalStackLayout VerticalOptions="End" Padding="20" Spacing="5">
-                            <Label Text="Hooded Metallic&#10;Shell Jacket" Style="{StaticResource GlamurLabel}"/>
-
-                            <!--пипец цифры2-->
+                            <Label Text="{Binding Name}" Style="{StaticResource GlamurLabel}"/>
                             <Frame Style="{StaticResource Price}">
-                                <Label Style="{StaticResource PriceLabel}"/>
+                                <Label Text="{Binding FormattedPrice}" Style="{StaticResource PriceLabel}"/>
                             </Frame>
-
                         </VerticalStackLayout>
-                        
-                        <!--жестко оцениваем2-->
-                        <Frame Style="{StaticResource RatingFrame}">
 
-                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
-                                <Image Source="star.png" Style="{StaticResource Star}"/>
-
-                                <Label Style="{StaticResource RatingCount}"/>
-                            </HorizontalStackLayout>
-                        </Frame>
+                        <HorizontalStackLayout Margin="12" Spacing="5" HorizontalOptions="End">
+                            <Image Source="star.png" Style="{StaticResource Star}"/>
+                            <Label Text="{Binding Rating}" Style="{StaticResource RatingCount}"/>
+                        </HorizontalStackLayout>
 
                         <Frame Style="{StaticResource bagFrame}">
                             <Image Source="baag.png" Style="{StaticResource Bag}"/>
                         </Frame>
-                        
                     </Grid>
                 </Frame>
             </VerticalStackLayout>

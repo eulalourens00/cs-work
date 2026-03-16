@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:updatemarket.ViewModels"
              x:Class="updatemarket.CardPage"
              BackgroundColor="{StaticResource BackgroundCC}">
+    
+    <ContentPage.Resources>
+        <Style x:Key="FavoriteImage" TargetType="Image">
+            <Setter Property="Source" Value="tag.png"/>
+            <Setter Property="MaximumHeightRequest" Value="26"/>
+            <Setter Property="MaximumWidthRequest" Value="26"/>
+            <Style.Triggers>
+                <DataTrigger TargetType="Image"  Binding="{Binding IsFavorite}" Value="True">
+                    <Setter Property="Source" Value="tag_filled.png"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <viewModels:CardPageViewModel />
+    </ContentPage.BindingContext>
+
     <ScrollView Background="Transparent">
         <VerticalStackLayout>
             <!--ЛОГО И КНОПКИ МЕНЮ - КОРЗИНА-->
@@ -14,7 +33,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <ImageButton Style="{StaticResource ImgBtn}" MaximumHeightRequest="65" MaximumWidthRequest="65" Source="baacck.png"  Grid.Column="0"  />
+                <ImageButton Style="{StaticResource ImgBtn}" Command="{Binding GoBackCommand}" MaximumHeightRequest="65" MaximumWidthRequest="65" Source="baacck.png"  Grid.Column="0"  />
 
                 <Image Grid.Column="1" Source="logo.png" Style="{StaticResource Logo}" />
 
@@ -28,19 +47,6 @@
                 <Frame Style="{StaticResource BigFrame}" >
                     <Grid>
                         <Image Style="{StaticResource BigCard}" Source="main.png"></Image>
-
-                        <!--жестко оцениваем-->
-                        <Frame Style="{StaticResource RatingFrame}" >
-
-                            <HorizontalStackLayout Padding="10,0,0,0" Spacing="5">
-                                <Image Source="star.png" Style="{StaticResource Star}"/>
-
-                                <Label Style="{StaticResource RatingCount}"/>
-                            </HorizontalStackLayout>
-                        </Frame>
-                        <Frame Style="{StaticResource bagFrame}">
-                            <Image Source="baag.png" Style="{StaticResource Bag}"/>
-                        </Frame>
                     </Grid>
                 </Frame>
 
@@ -78,12 +84,15 @@
                 </Grid.ColumnDefinitions>
 
                 <Frame Grid.Column="0" BorderColor="Transparent" BackgroundColor="Transparent">
-                    <Label Text="Avoine Hooded&#10;Quilted Jacket" TextColor="Black" FontSize="22"
+                    <Label Text="{Binding Product.Name}"  TextColor="Black" FontSize="22" MaximumWidthRequest="320"
                      HorizontalTextAlignment="Start" Padding="10"/>
                 </Frame>
                 
                 <Frame Grid.Column="1" BorderColor="Transparent" BackgroundColor="Transparent">
-                    <Image Style="{StaticResource SavedCard}" Source="tag.png" ></Image>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToggleFavoriteCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <Image Style="{StaticResource FavoriteImage}" ></Image>
                 </Frame>
             </Grid>
 
@@ -105,7 +114,7 @@
                                    Padding="5" HeightRequest="32" WidthRequest="110" HorizontalOptions="Start">
                             <HorizontalStackLayout Spacing="9">
 
-                                <Label Text="BEIGE" TextColor="#FFFFFF" FontSize="12"/>
+                                <Label Text="{Binding Product.Color}" TextColor="#FFFFFF" FontSize="12"/>
 
                                 <Frame HeightRequest="16" WidthRequest="37" BackgroundColor="#EFEEEA" BorderColor="Transparent"/>
 
@@ -124,8 +133,8 @@
 
                         <Frame Margin="0,45,0,0" BorderColor="Transparent" BackgroundColor="white"
                                    Padding="5" HeightRequest="30" WidthRequest="110" HorizontalOptions="Start">
-                            
-                                <Label Text="MEDIUM" TextColor="black" FontSize="12"/>
+
+                            <Label Text="{Binding Product.Size}" TextColor="black" FontSize="12"/>
 
                         </Frame>
 
@@ -134,6 +143,9 @@
             </Grid>
 
             <Frame  Style="{StaticResource CheckOutFrame}"  Margin="10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddToCartCommand}"/>
+                </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -142,7 +154,7 @@
 
                     <Label Grid.Column="0" Text="CHEKOUT" TextColor="white"></Label>
 
-                    <Label Grid.Column="1" Text="$ 1500" TextColor="black" HorizontalOptions="End"></Label>
+                    <Label Grid.Column="1" Text="{Binding Product.FormattedPrice}" TextColor="black" HorizontalOptions="End"></Label>
                 </Grid>
 
             </Frame>
