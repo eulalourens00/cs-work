@@ -42,8 +42,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(92, 9);
+            label1.ForeColor = Color.DarkOrchid;
+            label1.Location = new Point(87, 30);
             label1.Name = "label1";
             label1.Size = new Size(160, 28);
             label1.TabIndex = 11;
@@ -51,28 +51,28 @@
             // 
             // nameBox
             // 
-            nameBox.Location = new Point(12, 70);
+            nameBox.Location = new Point(29, 70);
             nameBox.Name = "nameBox";
             nameBox.PlaceholderText = "Заголовок";
-            nameBox.Size = new Size(309, 27);
+            nameBox.Size = new Size(292, 27);
             nameBox.TabIndex = 12;
             // 
             // linkBox
             // 
-            linkBox.Location = new Point(12, 177);
+            linkBox.Location = new Point(29, 177);
             linkBox.Multiline = true;
             linkBox.Name = "linkBox";
             linkBox.PlaceholderText = "Ссылка на документ";
-            linkBox.Size = new Size(309, 160);
+            linkBox.Size = new Size(292, 160);
             linkBox.TabIndex = 13;
             // 
             // SaveButton
             // 
-            SaveButton.BackColor = SystemColors.GradientInactiveCaption;
+            SaveButton.BackColor = Color.Plum;
             SaveButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            SaveButton.Location = new Point(173, 376);
+            SaveButton.Location = new Point(185, 366);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(148, 32);
+            SaveButton.Size = new Size(136, 32);
             SaveButton.TabIndex = 14;
             SaveButton.Text = "Сохранить";
             SaveButton.UseVisualStyleBackColor = false;
@@ -82,9 +82,9 @@
             // 
             CancelButton.BackColor = SystemColors.ButtonHighlight;
             CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            CancelButton.Location = new Point(12, 376);
+            CancelButton.Location = new Point(29, 366);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(148, 32);
+            CancelButton.Size = new Size(132, 32);
             CancelButton.TabIndex = 15;
             CancelButton.Text = "Выйти";
             CancelButton.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             // EmployeeComboBox
             // 
             EmployeeComboBox.FormattingEnabled = true;
-            EmployeeComboBox.Location = new Point(13, 127);
+            EmployeeComboBox.Location = new Point(29, 127);
             EmployeeComboBox.Name = "EmployeeComboBox";
-            EmployeeComboBox.Size = new Size(308, 28);
+            EmployeeComboBox.Size = new Size(292, 28);
             EmployeeComboBox.TabIndex = 16;
             // 
             // NewTaskForm
@@ -103,6 +103,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 430);
             Controls.Add(EmployeeComboBox);
             Controls.Add(CancelButton);

@@ -34,6 +34,8 @@
             ObjectLayout = new TableLayoutPanel();
             DocumentsList = new ListView();
             ShowObjects = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // collapsibleSidebar1
@@ -55,7 +57,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(82, 9);
+            label1.Location = new Point(94, 20);
             label1.Name = "label1";
             label1.Size = new Size(190, 32);
             label1.TabIndex = 1;
@@ -77,7 +79,7 @@
             // 
             // DocumentsList
             // 
-            DocumentsList.Location = new Point(548, 55);
+            DocumentsList.Location = new Point(521, 55);
             DocumentsList.Name = "DocumentsList";
             DocumentsList.Size = new Size(322, 409);
             DocumentsList.TabIndex = 12;
@@ -86,11 +88,11 @@
             // 
             // ShowObjects
             // 
-            ShowObjects.BackColor = SystemColors.GradientActiveCaption;
+            ShowObjects.BackColor = Color.Plum;
             ShowObjects.FlatAppearance.BorderColor = Color.Black;
             ShowObjects.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             ShowObjects.ForeColor = Color.Black;
-            ShowObjects.Location = new Point(82, 487);
+            ShowObjects.Location = new Point(82, 470);
             ShowObjects.Name = "ShowObjects";
             ShowObjects.Size = new Size(298, 31);
             ShowObjects.TabIndex = 13;
@@ -98,12 +100,25 @@
             ShowObjects.UseVisualStyleBackColor = false;
             ShowObjects.Click += ShowObjects_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(685, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(185, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // DocumentationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 553);
+            Controls.Add(pictureBox1);
             Controls.Add(collapsibleSidebar1);
             Controls.Add(ShowObjects);
             Controls.Add(DocumentsList);
@@ -115,6 +130,7 @@
             Name = "DocumentationForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DocumentationForm";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,5 +142,6 @@
         private TableLayoutPanel ObjectLayout;
         private ListView DocumentsList;
         private Button ShowObjects;
+        private PictureBox pictureBox1;
     }
 }

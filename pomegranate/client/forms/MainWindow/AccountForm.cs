@@ -92,7 +92,7 @@ namespace client.forms.MainWindow
                         }
                     }
                     catch (Exception ex)
-                    {  MessageBox.Show($"Ошибка при обновлении аватарки: {ex.Message}"); }
+                    { MessageBox.Show($"Ошибка при обновлении аватарки: {ex.Message}"); }
                 }
             }
         }
@@ -109,7 +109,7 @@ namespace client.forms.MainWindow
         private void AdminSMS_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Связаться с администрацией можно по следующему эл. адресу - "
-                +"admin_pomegranate@com", "Администрация", MessageBoxButtons.OKCancel);
+                + "admin_pomegranate@com", "Администрация", MessageBoxButtons.OKCancel);
         }
         // что за фигня вообще. админ тру  крч. попытка зайти обратно на учетку - флс. не работает ептель
 
@@ -136,11 +136,21 @@ namespace client.forms.MainWindow
                     string defaultAvatarPath = @"C:\Hackathon\images\default_avatar.jpg";
 
                     if (File.Exists(defaultAvatarPath))
-                    {  avatarPictureBox.Image = Image.FromFile(defaultAvatarPath);  }
+                    { avatarPictureBox.Image = Image.FromFile(defaultAvatarPath); }
                 }
             }
             catch (Exception ex)
             { MessageBox.Show($"Ошибка загрузки аватарки: {ex.Message}"); }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FN_box_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

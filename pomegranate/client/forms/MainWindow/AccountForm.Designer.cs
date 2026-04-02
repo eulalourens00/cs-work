@@ -41,7 +41,10 @@
             InfoButton = new Button();
             EmailBox = new TextBox();
             UsernameBox = new TextBox();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)avatarPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // collapsibleSidebar1
@@ -60,7 +63,7 @@
             // 
             // avatarPictureBox
             // 
-            avatarPictureBox.Location = new Point(89, 55);
+            avatarPictureBox.Location = new Point(125, 102);
             avatarPictureBox.Name = "avatarPictureBox";
             avatarPictureBox.Size = new Size(207, 197);
             avatarPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -73,7 +76,7 @@
             ChangeAvaLik.AutoSize = true;
             ChangeAvaLik.BackColor = Color.Transparent;
             ChangeAvaLik.LinkColor = Color.Gray;
-            ChangeAvaLik.Location = new Point(107, 255);
+            ChangeAvaLik.Location = new Point(145, 323);
             ChangeAvaLik.Name = "ChangeAvaLik";
             ChangeAvaLik.Size = new Size(178, 20);
             ChangeAvaLik.TabIndex = 2;
@@ -86,7 +89,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(86, 9);
+            label1.Location = new Point(119, 52);
             label1.Name = "label1";
             label1.Size = new Size(213, 32);
             label1.TabIndex = 3;
@@ -95,15 +98,16 @@
             // FN_box
             // 
             FN_box.BackColor = Color.Lavender;
-            FN_box.Location = new Point(454, 55);
+            FN_box.Location = new Point(432, 102);
             FN_box.Name = "FN_box";
             FN_box.Size = new Size(305, 27);
             FN_box.TabIndex = 4;
+            FN_box.TextChanged += FN_box_TextChanged;
             // 
             // LN_box
             // 
             LN_box.BackColor = Color.Lavender;
-            LN_box.Location = new Point(454, 106);
+            LN_box.Location = new Point(432, 148);
             LN_box.Name = "LN_box";
             LN_box.Size = new Size(305, 27);
             LN_box.TabIndex = 5;
@@ -111,7 +115,7 @@
             // RoleBox
             // 
             RoleBox.BackColor = Color.Lavender;
-            RoleBox.Location = new Point(454, 270);
+            RoleBox.Location = new Point(432, 294);
             RoleBox.Name = "RoleBox";
             RoleBox.Size = new Size(305, 27);
             RoleBox.TabIndex = 7;
@@ -119,7 +123,7 @@
             // PositionBox
             // 
             PositionBox.BackColor = Color.Lavender;
-            PositionBox.Location = new Point(454, 328);
+            PositionBox.Location = new Point(432, 336);
             PositionBox.Name = "PositionBox";
             PositionBox.Size = new Size(305, 27);
             PositionBox.TabIndex = 8;
@@ -128,7 +132,7 @@
             // 
             AdminSMS.BackColor = Color.Silver;
             AdminSMS.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            AdminSMS.Location = new Point(454, 512);
+            AdminSMS.Location = new Point(432, 456);
             AdminSMS.Name = "AdminSMS";
             AdminSMS.Size = new Size(305, 29);
             AdminSMS.TabIndex = 9;
@@ -140,7 +144,7 @@
             // 
             InfoButton.BackColor = Color.Silver;
             InfoButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            InfoButton.Location = new Point(107, 512);
+            InfoButton.Location = new Point(145, 456);
             InfoButton.Name = "InfoButton";
             InfoButton.Size = new Size(174, 29);
             InfoButton.TabIndex = 10;
@@ -151,7 +155,7 @@
             // EmailBox
             // 
             EmailBox.BackColor = Color.Lavender;
-            EmailBox.Location = new Point(454, 215);
+            EmailBox.Location = new Point(432, 243);
             EmailBox.Name = "EmailBox";
             EmailBox.Size = new Size(305, 27);
             EmailBox.TabIndex = 11;
@@ -159,17 +163,44 @@
             // UsernameBox
             // 
             UsernameBox.BackColor = Color.Lavender;
-            UsernameBox.Location = new Point(454, 161);
+            UsernameBox.Location = new Point(432, 197);
             UsernameBox.Name = "UsernameBox";
             UsernameBox.Size = new Size(305, 27);
             UsernameBox.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(675, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(185, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Location = new Point(444, 58);
+            label2.Name = "label2";
+            label2.Size = new Size(280, 28);
+            label2.TabIndex = 14;
+            label2.Text = "Информация о сотруднике";
+            label2.Click += label2_Click;
             // 
             // AccountForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 553);
+            Controls.Add(label2);
+            Controls.Add(pictureBox1);
             Controls.Add(collapsibleSidebar1);
             Controls.Add(UsernameBox);
             Controls.Add(EmailBox);
@@ -189,6 +220,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountForm";
             ((System.ComponentModel.ISupportInitialize)avatarPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,5 +239,7 @@
         private Button InfoButton;
         private TextBox EmailBox;
         private TextBox UsernameBox;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

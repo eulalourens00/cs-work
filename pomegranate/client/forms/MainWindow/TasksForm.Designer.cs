@@ -34,6 +34,8 @@
             MakeTaskButton = new Button();
             ShowAllTAsksButoon = new Button();
             TaskLayout = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // collapsibleSidebar1
@@ -55,7 +57,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(80, 9);
+            label1.Location = new Point(80, 32);
             label1.Name = "label1";
             label1.Size = new Size(162, 32);
             label1.TabIndex = 1;
@@ -63,9 +65,9 @@
             // 
             // MakeTaskButton
             // 
-            MakeTaskButton.BackColor = SystemColors.GradientActiveCaption;
+            MakeTaskButton.BackColor = Color.Plum;
             MakeTaskButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            MakeTaskButton.Location = new Point(394, 512);
+            MakeTaskButton.Location = new Point(400, 482);
             MakeTaskButton.Name = "MakeTaskButton";
             MakeTaskButton.Size = new Size(94, 29);
             MakeTaskButton.TabIndex = 2;
@@ -77,7 +79,7 @@
             // 
             ShowAllTAsksButoon.BackColor = Color.Silver;
             ShowAllTAsksButoon.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ShowAllTAsksButoon.Location = new Point(80, 512);
+            ShowAllTAsksButoon.Location = new Point(80, 482);
             ShowAllTAsksButoon.Name = "ShowAllTAsksButoon";
             ShowAllTAsksButoon.Size = new Size(286, 29);
             ShowAllTAsksButoon.TabIndex = 3;
@@ -99,12 +101,25 @@
             TaskLayout.Size = new Size(433, 409);
             TaskLayout.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(650, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(185, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // TasksForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 553);
+            Controls.Add(pictureBox1);
             Controls.Add(collapsibleSidebar1);
             Controls.Add(TaskLayout);
             Controls.Add(ShowAllTAsksButoon);
@@ -116,6 +131,7 @@
             Name = "TasksForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TasksForm";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +143,6 @@
         private Button MakeTaskButton;
         private Button ShowAllTAsksButoon;
         private TableLayoutPanel TaskLayout;
+        private PictureBox pictureBox1;
     }
 }

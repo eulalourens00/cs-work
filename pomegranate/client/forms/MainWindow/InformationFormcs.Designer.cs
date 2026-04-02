@@ -41,7 +41,7 @@
             // 
             // NameBox
             // 
-            NameBox.Location = new Point(12, 64);
+            NameBox.Location = new Point(23, 66);
             NameBox.Name = "NameBox";
             NameBox.PlaceholderText = "Название ";
             NameBox.Size = new Size(200, 27);
@@ -51,7 +51,7 @@
             // 
             ObjectTypecomboBox.ForeColor = Color.DimGray;
             ObjectTypecomboBox.FormattingEnabled = true;
-            ObjectTypecomboBox.Location = new Point(12, 111);
+            ObjectTypecomboBox.Location = new Point(23, 111);
             ObjectTypecomboBox.Name = "ObjectTypecomboBox";
             ObjectTypecomboBox.Size = new Size(200, 28);
             ObjectTypecomboBox.TabIndex = 6;
@@ -59,7 +59,7 @@
             // 
             // LocationBox
             // 
-            LocationBox.Location = new Point(12, 155);
+            LocationBox.Location = new Point(22, 154);
             LocationBox.Name = "LocationBox";
             LocationBox.PlaceholderText = "Расположение";
             LocationBox.Size = new Size(200, 27);
@@ -70,16 +70,16 @@
             NumberBox.Location = new Point(229, 111);
             NumberBox.Name = "NumberBox";
             NumberBox.PlaceholderText = "Кад. номер";
-            NumberBox.Size = new Size(107, 27);
+            NumberBox.Size = new Size(90, 27);
             NumberBox.TabIndex = 8;
             // 
             // DescriptionBox
             // 
-            DescriptionBox.Location = new Point(12, 202);
+            DescriptionBox.Location = new Point(22, 202);
             DescriptionBox.Multiline = true;
             DescriptionBox.Name = "DescriptionBox";
             DescriptionBox.PlaceholderText = "Описание";
-            DescriptionBox.Size = new Size(324, 154);
+            DescriptionBox.Size = new Size(297, 154);
             DescriptionBox.TabIndex = 9;
             // 
             // label1
@@ -87,8 +87,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(42, 9);
+            label1.ForeColor = Color.DarkViolet;
+            label1.Location = new Point(42, 26);
             label1.Name = "label1";
             label1.Size = new Size(262, 28);
             label1.TabIndex = 10;
@@ -98,7 +98,7 @@
             // 
             EditObject.BackColor = SystemColors.Control;
             EditObject.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            EditObject.Location = new Point(12, 372);
+            EditObject.Location = new Point(22, 362);
             EditObject.Name = "EditObject";
             EditObject.Size = new Size(143, 32);
             EditObject.TabIndex = 11;
@@ -108,9 +108,9 @@
             // 
             // SaveButton
             // 
-            SaveButton.BackColor = SystemColors.GradientInactiveCaption;
+            SaveButton.BackColor = Color.Plum;
             SaveButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            SaveButton.Location = new Point(188, 372);
+            SaveButton.Location = new Point(171, 362);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(148, 32);
             SaveButton.TabIndex = 12;
@@ -123,6 +123,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 430);
             Controls.Add(SaveButton);
             Controls.Add(EditObject);

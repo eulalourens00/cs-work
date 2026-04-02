@@ -21,28 +21,26 @@ namespace client.forms.MainWindow
         private readonly string _username;
         private readonly string _email;
 
-        public NewEmployeeForm(int userId, string username, string email, string password)
+        public NewEmployeeForm()
         {
             InitializeComponent();
-            _userId = userId;
-            _username = username;
-            _email = email;
+
 
             LoadRolesAndPositions();
-            SetupControls(password);
+            SetupControls();
         }
 
-        private void SetupControls(string password)
+        private void SetupControls()
         {
-            UsernameBox.Text = _username;
-            EmailBox.Text = _email;
+            UsernameBox.Text = "";
+            PasswordBox.Text = "";
+            EmailBox.Text = "";
+            FnameBox.Text = "";
+            LnameBox.Text = "";
 
-            PasswordBox.PasswordChar = '*';
-            PasswordBox.Text = password;
-            PasswordBox.ReadOnly = true;
-
-            UsernameBox.ReadOnly = true;
-            EmailBox.ReadOnly = true;
+            UsernameBox.ReadOnly = false;
+            PasswordBox.ReadOnly = false;
+            EmailBox.ReadOnly = false;
         }
 
         private void LoadRolesAndPositions()
@@ -113,14 +111,14 @@ namespace client.forms.MainWindow
             if (string.IsNullOrWhiteSpace(FnameBox.Text) ||  string.IsNullOrWhiteSpace(LnameBox.Text))
             {  MessageBox.Show("Заполните все обязательные поля");  return; }
 
+            if (RoleComboBox.SelectedItem == null || PositionComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите роль и должность");
+                return;
+            }
+
             try
             {
-                if (RoleComboBox.SelectedItem == null || PositionComboBox.SelectedItem == null)
-                {
-                    MessageBox.Show("Выберите роль и должность");
-                    return;
-                }
-
                 var newEmployee = new Employees
                 {
                     first_name = FnameBox.Text,
@@ -129,20 +127,28 @@ namespace client.forms.MainWindow
                     position_id = ((PositionItem)PositionComboBox.SelectedItem).Id
                 };
 
-                int success = _controller.AddEmployee(newEmployee, _userId);
+                int result = _controller.AddEmployeeWithUser(
+                    newEmployee,
+                    UsernameBox.Text.Trim(),
+                    PasswordBox.Text.Trim(),
+                    EmailBox.Text.Trim()
+                );
 
-                if (success > 0)
+                if (result > 0)
                 {
-                    MessageBox.Show("Сотрудник успешно добавлен");
+                    MessageBox.Show($"Сотрудник {FnameBox.Text} {LnameBox.Text} успешно добавлен!\nЛогин: {UsernameBox.Text}");
                     this.DialogResult = DialogResult.OK;
-                    this.Tag = success;
                     this.Close();
                 }
                 else
-                {  MessageBox.Show("Не удалось добавить сотрудника");}
+                {
+                    MessageBox.Show("Не удалось добавить сотрудника");
+                }
             }
             catch (Exception ex)
-            {  MessageBox.Show($"Ошибка при сохранении: {ex.Message}\n\n{ex.StackTrace}");}
+            {
+                MessageBox.Show($"Ошибка при сохранении: {ex.Message}");
+            }
         }
     }
     public class RoleItem

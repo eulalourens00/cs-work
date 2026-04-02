@@ -41,7 +41,7 @@
             // 
             // NameBox
             // 
-            NameBox.Location = new Point(12, 52);
+            NameBox.Location = new Point(23, 64);
             NameBox.Name = "NameBox";
             NameBox.PlaceholderText = "Название ";
             NameBox.Size = new Size(200, 27);
@@ -49,16 +49,16 @@
             // 
             // DescriptionBox
             // 
-            DescriptionBox.Location = new Point(12, 204);
+            DescriptionBox.Location = new Point(21, 204);
             DescriptionBox.Multiline = true;
             DescriptionBox.Name = "DescriptionBox";
             DescriptionBox.PlaceholderText = "Описание";
-            DescriptionBox.Size = new Size(324, 154);
+            DescriptionBox.Size = new Size(305, 154);
             DescriptionBox.TabIndex = 2;
             // 
             // LocationBox
             // 
-            LocationBox.Location = new Point(12, 149);
+            LocationBox.Location = new Point(21, 152);
             LocationBox.Name = "LocationBox";
             LocationBox.PlaceholderText = "Расположение";
             LocationBox.Size = new Size(200, 27);
@@ -66,17 +66,17 @@
             // 
             // NumberBox
             // 
-            NumberBox.Location = new Point(229, 96);
+            NumberBox.Location = new Point(229, 106);
             NumberBox.Name = "NumberBox";
             NumberBox.PlaceholderText = "Кад. номер";
-            NumberBox.Size = new Size(107, 27);
+            NumberBox.Size = new Size(97, 27);
             NumberBox.TabIndex = 4;
             // 
             // ObjectTypecomboBox
             // 
             ObjectTypecomboBox.ForeColor = Color.DimGray;
             ObjectTypecomboBox.FormattingEnabled = true;
-            ObjectTypecomboBox.Location = new Point(12, 95);
+            ObjectTypecomboBox.Location = new Point(23, 106);
             ObjectTypecomboBox.Name = "ObjectTypecomboBox";
             ObjectTypecomboBox.Size = new Size(200, 28);
             ObjectTypecomboBox.TabIndex = 5;
@@ -87,8 +87,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(95, 9);
+            label1.ForeColor = Color.DarkViolet;
+            label1.Location = new Point(90, 24);
             label1.Name = "label1";
             label1.Size = new Size(154, 28);
             label1.TabIndex = 6;
@@ -96,9 +96,9 @@
             // 
             // EndMakeObject
             // 
-            EndMakeObject.BackColor = SystemColors.InactiveCaption;
+            EndMakeObject.BackColor = Color.Plum;
             EndMakeObject.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            EndMakeObject.Location = new Point(217, 386);
+            EndMakeObject.Location = new Point(207, 364);
             EndMakeObject.Name = "EndMakeObject";
             EndMakeObject.Size = new Size(119, 32);
             EndMakeObject.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             CancelObject.BackColor = SystemColors.Control;
             CancelObject.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            CancelObject.Location = new Point(12, 386);
+            CancelObject.Location = new Point(21, 364);
             CancelObject.Name = "CancelObject";
             CancelObject.Size = new Size(119, 32);
             CancelObject.TabIndex = 8;
@@ -123,6 +123,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 430);
             Controls.Add(CancelObject);
             Controls.Add(EndMakeObject);

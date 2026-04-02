@@ -27,7 +27,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObjectsManagementForm));
             TestLabel = new Label();
             MakeObject = new Button();
-            collapsibleSidebar1 = new forms.MainWindow.CollapsibleSidebar();
+            collapsibleSidebar1 = new client.forms.MainWindow.CollapsibleSidebar();
             ObjectLayout = new TableLayoutPanel();
             ShowObjects = new Button();
             SearchBox = new TextBox();
@@ -39,7 +39,7 @@
             TestLabel.AutoSize = true;
             TestLabel.BackColor = Color.Transparent;
             TestLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            TestLabel.Location = new Point(75, 9);
+            TestLabel.Location = new Point(87, 25);
             TestLabel.Name = "TestLabel";
             TestLabel.Size = new Size(292, 32);
             TestLabel.TabIndex = 0;
@@ -47,12 +47,12 @@
             // 
             // MakeObject
             // 
-            MakeObject.BackColor = Color.FromArgb(224, 224, 224);
+            MakeObject.BackColor = Color.Plum;
             MakeObject.FlatAppearance.BorderColor = Color.Black;
             MakeObject.FlatAppearance.BorderSize = 0;
             MakeObject.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             MakeObject.ForeColor = Color.Black;
-            MakeObject.Location = new Point(375, 491);
+            MakeObject.Location = new Point(391, 475);
             MakeObject.Name = "MakeObject";
             MakeObject.Size = new Size(129, 31);
             MakeObject.TabIndex = 3;
@@ -82,7 +82,7 @@
             ObjectLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 73.903F));
             ObjectLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.0969982F));
             ObjectLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 136F));
-            ObjectLayout.Location = new Point(75, 51);
+            ObjectLayout.Location = new Point(75, 60);
             ObjectLayout.Name = "ObjectLayout";
             ObjectLayout.RowCount = 1;
             ObjectLayout.RowStyles.Add(new RowStyle());
@@ -91,11 +91,11 @@
             // 
             // ShowObjects
             // 
-            ShowObjects.BackColor = SystemColors.GradientActiveCaption;
+            ShowObjects.BackColor = SystemColors.ScrollBar;
             ShowObjects.FlatAppearance.BorderColor = Color.Black;
             ShowObjects.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             ShowObjects.ForeColor = Color.Black;
-            ShowObjects.Location = new Point(75, 491);
+            ShowObjects.Location = new Point(87, 475);
             ShowObjects.Name = "ShowObjects";
             ShowObjects.Size = new Size(298, 31);
             ShowObjects.TabIndex = 7;
@@ -105,7 +105,7 @@
             // 
             // SearchBox
             // 
-            SearchBox.Location = new Point(536, 50);
+            SearchBox.Location = new Point(536, 60);
             SearchBox.Name = "SearchBox";
             SearchBox.PlaceholderText = "Поиск";
             SearchBox.Size = new Size(279, 27);
@@ -113,7 +113,7 @@
             // 
             // SearchButton
             // 
-            SearchButton.Location = new Point(833, 48);
+            SearchButton.Location = new Point(833, 59);
             SearchButton.Name = "SearchButton";
             SearchButton.Size = new Size(37, 29);
             SearchButton.TabIndex = 9;
@@ -128,6 +128,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 553);
             Controls.Add(SearchButton);
             Controls.Add(MakeObject);

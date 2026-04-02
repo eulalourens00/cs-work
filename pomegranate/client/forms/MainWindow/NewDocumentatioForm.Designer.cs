@@ -41,7 +41,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
+            label1.ForeColor = Color.DarkViolet;
             label1.Location = new Point(89, 19);
             label1.Name = "label1";
             label1.Size = new Size(158, 28);
@@ -50,23 +50,23 @@
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(12, 70);
+            NameTextBox.Location = new Point(30, 70);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.PlaceholderText = "Название";
-            NameTextBox.Size = new Size(309, 27);
+            NameTextBox.Size = new Size(291, 27);
             NameTextBox.TabIndex = 15;
             // 
             // FilePathTextBox
             // 
-            FilePathTextBox.Location = new Point(12, 126);
+            FilePathTextBox.Location = new Point(30, 126);
             FilePathTextBox.Name = "FilePathTextBox";
             FilePathTextBox.PlaceholderText = "Путь к файлу";
-            FilePathTextBox.Size = new Size(309, 27);
+            FilePathTextBox.Size = new Size(291, 27);
             FilePathTextBox.TabIndex = 17;
             // 
             // SaveButton
             // 
-            SaveButton.BackColor = SystemColors.GradientInactiveCaption;
+            SaveButton.BackColor = Color.Plum;
             SaveButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             SaveButton.Location = new Point(173, 188);
             SaveButton.Name = "SaveButton";
@@ -80,7 +80,7 @@
             // 
             CancelButton.BackColor = SystemColors.ButtonHighlight;
             CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            CancelButton.Location = new Point(12, 188);
+            CancelButton.Location = new Point(19, 188);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(148, 32);
             CancelButton.TabIndex = 23;
@@ -93,6 +93,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 242);
             Controls.Add(CancelButton);
             Controls.Add(SaveButton);

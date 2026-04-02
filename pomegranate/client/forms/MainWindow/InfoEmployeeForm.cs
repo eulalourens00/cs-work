@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace client.forms.MainWindow
 {
-    public partial class InfoEmployeeForm : Form
+    internal partial class InfoEmployeeForm : Form
     {
         private readonly DBController _controller = new DBController(@"C:\Hackathon\dataBase.db");
         private readonly int _employeeId;
-        public InfoEmployeeForm(int employeeId)
+        public InfoEmployeeForm(DBController controller, int employeeId)
         {
             InitializeComponent();
-
+            _controller = controller;
             _employeeId = employeeId;
 
             SetupControls();

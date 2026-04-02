@@ -45,8 +45,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(117, 9);
+            label1.ForeColor = Color.DarkViolet;
+            label1.Location = new Point(106, 23);
             label1.Name = "label1";
             label1.Size = new Size(115, 28);
             label1.TabIndex = 13;
@@ -54,51 +54,51 @@
             // 
             // FnameBox
             // 
-            FnameBox.Location = new Point(12, 63);
+            FnameBox.Location = new Point(22, 63);
             FnameBox.Name = "FnameBox";
             FnameBox.PlaceholderText = "Имя";
-            FnameBox.Size = new Size(309, 27);
+            FnameBox.Size = new Size(290, 27);
             FnameBox.TabIndex = 14;
             // 
             // LnameBox
             // 
-            LnameBox.Location = new Point(12, 109);
+            LnameBox.Location = new Point(22, 109);
             LnameBox.Name = "LnameBox";
             LnameBox.PlaceholderText = "Фамилия";
-            LnameBox.Size = new Size(309, 27);
+            LnameBox.Size = new Size(290, 27);
             LnameBox.TabIndex = 15;
             // 
             // EmailBox
             // 
-            EmailBox.Location = new Point(12, 156);
+            EmailBox.Location = new Point(22, 156);
             EmailBox.Name = "EmailBox";
             EmailBox.PlaceholderText = "Email";
-            EmailBox.Size = new Size(309, 27);
+            EmailBox.Size = new Size(290, 27);
             EmailBox.TabIndex = 16;
             // 
             // LoginBox
             // 
-            LoginBox.Location = new Point(12, 262);
+            LoginBox.Location = new Point(22, 262);
             LoginBox.Name = "LoginBox";
             LoginBox.PlaceholderText = "Логин";
-            LoginBox.Size = new Size(309, 27);
+            LoginBox.Size = new Size(290, 27);
             LoginBox.TabIndex = 22;
             // 
             // PasswordBox
             // 
-            PasswordBox.Location = new Point(12, 306);
+            PasswordBox.Location = new Point(22, 306);
             PasswordBox.Name = "PasswordBox";
             PasswordBox.PlaceholderText = "Пароль";
-            PasswordBox.Size = new Size(309, 27);
+            PasswordBox.Size = new Size(290, 27);
             PasswordBox.TabIndex = 23;
             // 
             // EditButton
             // 
             EditButton.BackColor = Color.Silver;
             EditButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            EditButton.Location = new Point(14, 368);
+            EditButton.Location = new Point(22, 353);
             EditButton.Name = "EditButton";
-            EditButton.Size = new Size(309, 32);
+            EditButton.Size = new Size(290, 32);
             EditButton.TabIndex = 24;
             EditButton.Text = "Выйти";
             EditButton.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // 
             // RoleBox
             // 
-            RoleBox.Location = new Point(12, 212);
+            RoleBox.Location = new Point(22, 212);
             RoleBox.Name = "RoleBox";
             RoleBox.PlaceholderText = "Роль";
-            RoleBox.Size = new Size(148, 27);
+            RoleBox.Size = new Size(138, 27);
             RoleBox.TabIndex = 26;
             // 
             // PositionBox
@@ -117,7 +117,7 @@
             PositionBox.Location = new Point(173, 212);
             PositionBox.Name = "PositionBox";
             PositionBox.PlaceholderText = "Должность";
-            PositionBox.Size = new Size(148, 27);
+            PositionBox.Size = new Size(139, 27);
             PositionBox.TabIndex = 27;
             // 
             // InfoEmployeeForm
@@ -125,6 +125,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(335, 412);
             Controls.Add(PositionBox);
             Controls.Add(RoleBox);

@@ -22,7 +22,8 @@ namespace client.forms.MainWindow
         private readonly string _username;
         private readonly string _email;
         private readonly string _password;
-        public EmployeesForm(bool isAdmin, int userId = 0, string username = "", string email = "", string password = "")
+        public EmployeesForm(bool isAdmin, int userId = 0, string username = "", 
+            string email = "", string password = "")
         {
             InitializeComponent();
 
@@ -39,13 +40,18 @@ namespace client.forms.MainWindow
                 return;
             }
 
-            LoadObjects();
-        }
+            this.Shown += EmployeesForm_Shown;
+}
+
+private void EmployeesForm_Shown(object sender, EventArgs e)
+{
+    AddEmployeeToLayout();
+}
 
         private void LoadObjects()
         {
             try
-            {  AddEmployeeToLayout(); }
+            { this.BeginInvoke((Action)(() => AddEmployeeToLayout())); }
             catch (Exception ex)
             {  MessageBox.Show($"Ошибка загрузки: {ex.Message}"); }
         }
@@ -92,43 +98,44 @@ namespace client.forms.MainWindow
 
         private void ShowEmployeeDetails(int employeeId)
         {
-            using (var employeeForm = new InfoEmployeeForm(employeeId))
+            using (var employeeForm = new InfoEmployeeForm(_controller, employeeId))
             {
                 employeeForm.ShowDialog();
-                LoadObjects();
+                
             }
+            LoadObjects();
         }
 
         private void DeleteEmployee(int employeeId)
         {
             if (MessageBox.Show("Удалить сотрудника?", "Подтверждение",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
+        MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    var employee = _controller.employeesModel.Query()?
-                        .FirstOrDefault(e => e.id == employeeId);
-
-                    if (employee != null)
+                    if (_controller.DeleteEmployeeWithUser(employeeId))
                     {
-                        _controller.employeesModel.DeleteRecord(employee);
                         MessageBox.Show("Сотрудник удален");
                         LoadObjects();
                     }
+                    else
+                    {
+                        MessageBox.Show("Не удалось удалить сотрудника");
+                    }
                 }
                 catch (Exception ex)
-                {  MessageBox.Show($"Ошибка удаления: {ex.Message}"); }
+                {
+                    MessageBox.Show($"Ошибка удаления: {ex.Message}");
+                }
             }
         }
         private void AddEmployeeButton_Click(object sender, EventArgs e)
         {
-            using (var form = new NewEmployeeForm(_userId, _username, _email, _password))
+            using (var form = new NewEmployeeForm())
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    int newEmployeeId = (int)form.Tag;
                     LoadObjects();
-                    ShowEmployeeDetails(newEmployeeId);
                 }
             }
         }

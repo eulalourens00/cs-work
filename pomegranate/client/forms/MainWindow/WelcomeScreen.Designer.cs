@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeScreen));
-            pictureBox1 = new PictureBox();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
             loginbutton = new Button();
             label2 = new Label();
             label3 = new Label();
@@ -43,59 +40,26 @@
             label4 = new Label();
             label5 = new Label();
             showPassword = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(160, 23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(564, 105);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Location = new Point(199, 131);
+            label1.Location = new Point(196, 151);
             label1.Name = "label1";
             label1.Size = new Size(525, 20);
             label1.TabIndex = 2;
             label1.Text = "______________________________________________________________________________________";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox2.Location = new Point(44, 79);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(92, 106);
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox3.Location = new Point(751, 79);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(92, 106);
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
-            // 
             // loginbutton
             // 
-            loginbutton.BackColor = Color.FromArgb(199, 44, 65);
+            loginbutton.BackColor = Color.Plum;
             loginbutton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             loginbutton.ForeColor = Color.White;
-            loginbutton.Location = new Point(302, 394);
+            loginbutton.Location = new Point(332, 394);
             loginbutton.Name = "loginbutton";
             loginbutton.Size = new Size(214, 38);
             loginbutton.TabIndex = 5;
@@ -109,7 +73,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label2.ForeColor = Color.FromArgb(64, 64, 64);
-            label2.Location = new Point(236, 203);
+            label2.Location = new Point(258, 218);
             label2.Name = "label2";
             label2.Size = new Size(363, 28);
             label2.TabIndex = 6;
@@ -127,7 +91,7 @@
             // Login
             // 
             Login.BackColor = Color.FromArgb(224, 216, 208);
-            Login.Location = new Point(302, 252);
+            Login.Location = new Point(331, 269);
             Login.Name = "Login";
             Login.PlaceholderText = "Логин";
             Login.Size = new Size(214, 27);
@@ -136,7 +100,7 @@
             // Password
             // 
             Password.BackColor = Color.FromArgb(224, 216, 208);
-            Password.Location = new Point(302, 317);
+            Password.Location = new Point(332, 318);
             Password.Name = "Password";
             Password.PasswordChar = '*';
             Password.PlaceholderText = "Пароль";
@@ -151,7 +115,7 @@
             forgotpassword.BackColor = Color.Transparent;
             forgotpassword.Cursor = Cursors.Hand;
             forgotpassword.LinkColor = Color.FromArgb(119, 119, 119);
-            forgotpassword.Location = new Point(397, 347);
+            forgotpassword.Location = new Point(421, 348);
             forgotpassword.Name = "forgotpassword";
             forgotpassword.Size = new Size(124, 20);
             forgotpassword.TabIndex = 10;
@@ -166,7 +130,7 @@
             newuserlink.BackColor = Color.Transparent;
             newuserlink.Cursor = Cursors.Hand;
             newuserlink.LinkColor = Color.FromArgb(119, 119, 119);
-            newuserlink.Location = new Point(342, 435);
+            newuserlink.Location = new Point(372, 435);
             newuserlink.Name = "newuserlink";
             newuserlink.Size = new Size(143, 20);
             newuserlink.TabIndex = 11;
@@ -188,8 +152,8 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label5.ForeColor = Color.Maroon;
-            label5.Location = new Point(271, 151);
+            label5.ForeColor = Color.Purple;
+            label5.Location = new Point(287, 171);
             label5.Name = "label5";
             label5.Size = new Size(309, 41);
             label5.TabIndex = 13;
@@ -204,7 +168,7 @@
             showPassword.FlatStyle = FlatStyle.System;
             showPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             showPassword.ForeColor = Color.Transparent;
-            showPassword.Location = new Point(492, 318);
+            showPassword.Location = new Point(522, 318);
             showPassword.Name = "showPassword";
             showPassword.Size = new Size(23, 25);
             showPassword.TabIndex = 23;
@@ -212,13 +176,26 @@
             showPassword.UseVisualStyleBackColor = false;
             showPassword.Click += showPassword_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(302, 49);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(269, 99);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
+            // 
             // WelcomeScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(882, 553);
+            Controls.Add(pictureBox1);
             Controls.Add(showPassword);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -229,9 +206,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(loginbutton);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox1);
-            Controls.Add(pictureBox2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -242,17 +216,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainPage";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pictureBox1;
         private Label label1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
         private Button loginbutton;
         private Label label2;
         private Label label3;
@@ -263,5 +232,6 @@
         private Label label4;
         private Label label5;
         private Button showPassword;
+        private PictureBox pictureBox1;
     }
 }

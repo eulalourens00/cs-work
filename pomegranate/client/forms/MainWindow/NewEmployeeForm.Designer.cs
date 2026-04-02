@@ -46,8 +46,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(76, 9);
+            label1.ForeColor = Color.DarkViolet;
+            label1.Location = new Point(76, 26);
             label1.Name = "label1";
             label1.Size = new Size(187, 28);
             label1.TabIndex = 12;
@@ -55,48 +55,48 @@
             // 
             // FnameBox
             // 
-            FnameBox.Location = new Point(12, 57);
+            FnameBox.Location = new Point(27, 57);
             FnameBox.Name = "FnameBox";
             FnameBox.PlaceholderText = "Имя";
-            FnameBox.Size = new Size(309, 27);
+            FnameBox.Size = new Size(294, 27);
             FnameBox.TabIndex = 13;
             // 
             // LnameBox
             // 
-            LnameBox.Location = new Point(12, 102);
+            LnameBox.Location = new Point(27, 102);
             LnameBox.Name = "LnameBox";
             LnameBox.PlaceholderText = "Фамилия";
-            LnameBox.Size = new Size(309, 27);
+            LnameBox.Size = new Size(294, 27);
             LnameBox.TabIndex = 14;
             // 
             // EmailBox
             // 
-            EmailBox.Location = new Point(12, 146);
+            EmailBox.Location = new Point(27, 146);
             EmailBox.Name = "EmailBox";
             EmailBox.PlaceholderText = "Email";
-            EmailBox.Size = new Size(309, 27);
+            EmailBox.Size = new Size(294, 27);
             EmailBox.TabIndex = 15;
             // 
             // UsernameBox
             // 
-            UsernameBox.Location = new Point(12, 250);
+            UsernameBox.Location = new Point(27, 250);
             UsernameBox.Name = "UsernameBox";
             UsernameBox.PlaceholderText = "Логин";
-            UsernameBox.Size = new Size(309, 27);
+            UsernameBox.Size = new Size(294, 27);
             UsernameBox.TabIndex = 17;
             // 
             // PasswordBox
             // 
-            PasswordBox.Location = new Point(12, 308);
+            PasswordBox.Location = new Point(27, 299);
             PasswordBox.Name = "PasswordBox";
             PasswordBox.PlaceholderText = "Пароль";
-            PasswordBox.Size = new Size(309, 27);
+            PasswordBox.Size = new Size(294, 27);
             PasswordBox.TabIndex = 18;
             // 
             // RoleComboBox
             // 
             RoleComboBox.FormattingEnabled = true;
-            RoleComboBox.Location = new Point(12, 197);
+            RoleComboBox.Location = new Point(27, 197);
             RoleComboBox.Name = "RoleComboBox";
             RoleComboBox.Size = new Size(141, 28);
             RoleComboBox.TabIndex = 19;
@@ -111,9 +111,9 @@
             // 
             // SaveButton
             // 
-            SaveButton.BackColor = SystemColors.GradientInactiveCaption;
+            SaveButton.BackColor = Color.Plum;
             SaveButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            SaveButton.Location = new Point(173, 373);
+            SaveButton.Location = new Point(174, 357);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(148, 32);
             SaveButton.TabIndex = 21;
@@ -125,9 +125,9 @@
             // 
             CancelButton.BackColor = SystemColors.ButtonHighlight;
             CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            CancelButton.Location = new Point(12, 373);
+            CancelButton.Location = new Point(27, 357);
             CancelButton.Name = "CancelButton";
-            CancelButton.Size = new Size(148, 32);
+            CancelButton.Size = new Size(141, 32);
             CancelButton.TabIndex = 22;
             CancelButton.Text = "Выйти";
             CancelButton.UseVisualStyleBackColor = false;
@@ -138,6 +138,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 430);
             Controls.Add(CancelButton);
             Controls.Add(SaveButton);

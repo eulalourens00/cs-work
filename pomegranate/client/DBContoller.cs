@@ -493,5 +493,116 @@ namespace client {
                 { Console.WriteLine($"Ошибка подключения к базе данных: {ex.Message}");return -1; }
             }
         }
+
+        public int AddEmployeeWithUser(Employees employee, string username, string password, string email)
+        {
+            var dbPath = @"Data Source=C:\Hackathon\dataBase.db;Version=3;";
+
+            using (var connection = new SQLiteConnection(dbPath))
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Создаём сотрудника
+                        int employeeId;
+                        using (var cmd = new SQLiteCommand(
+                            "INSERT INTO employees (first_name, last_name, role_id, position_id) " +
+                            "VALUES (@fname, @lname, @role, @position); SELECT last_insert_rowid();", connection))
+                        {
+                            cmd.Parameters.AddWithValue("@fname", employee.first_name);
+                            cmd.Parameters.AddWithValue("@lname", employee.last_name);
+                            cmd.Parameters.AddWithValue("@role", employee.role_id);
+                            cmd.Parameters.AddWithValue("@position", employee.position_id);
+                            employeeId = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                        // 2. Создаём пользователя, привязанного к этому сотруднику
+                        int userId;
+                        using (var cmd = new SQLiteCommand(
+                            "INSERT INTO users (employee_id, username, password, email) " +
+                            "VALUES (@employeeId, @username, @password, @email); SELECT last_insert_rowid();", connection))
+                        {
+                            cmd.Parameters.AddWithValue("@employeeId", employeeId);
+                            cmd.Parameters.AddWithValue("@username", username);
+                            cmd.Parameters.AddWithValue("@password", password);
+                            cmd.Parameters.AddWithValue("@email", email ?? "");
+                            userId = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                        transaction.Commit();
+                        return userId;
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Ошибка: {ex.Message}");
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public bool DeleteEmployeeWithUser(int employeeId)
+        {
+            var dbPath = @"Data Source=C:\Hackathon\dataBase.db;Version=3;";
+
+            using (var connection = new SQLiteConnection(dbPath))
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Находим пользователя, связанного с этим сотрудником
+                        int userId;
+                        using (var cmd = new SQLiteCommand(
+                            "SELECT id FROM users WHERE employee_id = @employeeId", connection))
+                        {
+                            cmd.Parameters.AddWithValue("@employeeId", employeeId);
+                            var result = cmd.ExecuteScalar();
+                            if (result == null)
+                            {
+                                // Нет связанного пользователя — можно удалять только сотрудника
+                                userId = -1;
+                            }
+                            else
+                            {
+                                userId = Convert.ToInt32(result);
+                            }
+                        }
+
+                        // 2. Если есть связанный пользователь — удаляем его
+                        if (userId > 0)
+                        {
+                            using (var cmd = new SQLiteCommand(
+                                "DELETE FROM users WHERE id = @userId", connection))
+                            {
+                                cmd.Parameters.AddWithValue("@userId", userId);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        // 3. Удаляем сотрудника
+                        using (var cmd = new SQLiteCommand(
+                            "DELETE FROM employees WHERE id = @employeeId", connection))
+                        {
+                            cmd.Parameters.AddWithValue("@employeeId", employeeId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Ошибка удаления: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

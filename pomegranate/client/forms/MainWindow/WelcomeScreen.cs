@@ -35,11 +35,13 @@ namespace client.forms.MainWindow
 
         private void newuserlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var authService = new AuthService(@"C:\Hackathon\dataBase.db", _database);
-            var registrationForm = new Registration(authService);
-           
-            registrationForm.Show();
-            this.Hide();
+            MessageBox.Show(
+                "Для создания учётной записи обратитесь к администратору.\n\n" +
+                "Только администратор может добавлять новых сотрудников в систему.",
+                "Email: admin@pomegranate.com",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
 
         }
 

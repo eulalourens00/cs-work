@@ -41,8 +41,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Brown;
-            label1.Location = new Point(40, 9);
+            label1.ForeColor = Color.DarkMagenta;
+            label1.Location = new Point(40, 26);
             label1.Name = "label1";
             label1.Size = new Size(262, 28);
             label1.TabIndex = 12;
@@ -50,36 +50,36 @@
             // 
             // nameBox
             // 
-            nameBox.Location = new Point(12, 68);
+            nameBox.Location = new Point(28, 68);
             nameBox.Name = "nameBox";
             nameBox.PlaceholderText = "Заголовок";
-            nameBox.Size = new Size(324, 27);
+            nameBox.Size = new Size(294, 27);
             nameBox.TabIndex = 13;
             // 
             // EmployeeComboBox
             // 
             EmployeeComboBox.FormattingEnabled = true;
-            EmployeeComboBox.Location = new Point(13, 127);
+            EmployeeComboBox.Location = new Point(28, 127);
             EmployeeComboBox.Name = "EmployeeComboBox";
-            EmployeeComboBox.Size = new Size(323, 28);
+            EmployeeComboBox.Size = new Size(294, 28);
             EmployeeComboBox.TabIndex = 17;
             // 
             // linkBox
             // 
-            linkBox.Location = new Point(13, 191);
+            linkBox.Location = new Point(28, 191);
             linkBox.Multiline = true;
             linkBox.Name = "linkBox";
             linkBox.PlaceholderText = "Ссылка на документ";
-            linkBox.Size = new Size(323, 160);
+            linkBox.Size = new Size(294, 160);
             linkBox.TabIndex = 18;
             // 
             // EditTaskButton
             // 
             EditTaskButton.BackColor = Color.LightGray;
             EditTaskButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            EditTaskButton.Location = new Point(13, 377);
+            EditTaskButton.Location = new Point(28, 357);
             EditTaskButton.Name = "EditTaskButton";
-            EditTaskButton.Size = new Size(323, 32);
+            EditTaskButton.Size = new Size(294, 32);
             EditTaskButton.TabIndex = 20;
             EditTaskButton.Text = "Выйти";
             EditTaskButton.UseVisualStyleBackColor = false;
@@ -90,6 +90,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(348, 430);
             Controls.Add(EditTaskButton);
             Controls.Add(linkBox);
