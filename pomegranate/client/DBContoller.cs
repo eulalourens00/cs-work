@@ -439,7 +439,7 @@ namespace client {
             return filePath;
         }
 
-        // Employee
+        // еmployee
         public int AddEmployee(Employees employee, int userId)
         {
             var dbPath = @"Data Source=C:\Hackathon\dataBase.db;Version=3;";
@@ -453,7 +453,6 @@ namespace client {
                     {
                         try
                         {
-                            // 1. запись сотрудника
                             int employeeId;
                             using (var cmd = new SQLiteCommand(
                                 "INSERT INTO employees (first_name, last_name, role_id, position_id) " +
@@ -466,8 +465,6 @@ namespace client {
                                 cmd.Parameters.AddWithValue("@position", employee.position_id);
                                 employeeId = Convert.ToInt32(cmd.ExecuteScalar());
                             }
-
-                            // 2. employee_id
                             using (var cmd = new SQLiteCommand(
                                 "UPDATE users SET employee_id = @employeeId WHERE id = @userId", connection))
                             {
@@ -505,7 +502,6 @@ namespace client {
                 {
                     try
                     {
-                        // 1. Создаём сотрудника
                         int employeeId;
                         using (var cmd = new SQLiteCommand(
                             "INSERT INTO employees (first_name, last_name, role_id, position_id) " +
@@ -517,8 +513,6 @@ namespace client {
                             cmd.Parameters.AddWithValue("@position", employee.position_id);
                             employeeId = Convert.ToInt32(cmd.ExecuteScalar());
                         }
-
-                        // 2. Создаём пользователя, привязанного к этому сотруднику
                         int userId;
                         using (var cmd = new SQLiteCommand(
                             "INSERT INTO users (employee_id, username, password, email) " +
@@ -555,7 +549,6 @@ namespace client {
                 {
                     try
                     {
-                        // 1. Находим пользователя, связанного с этим сотрудником
                         int userId;
                         using (var cmd = new SQLiteCommand(
                             "SELECT id FROM users WHERE employee_id = @employeeId", connection))
@@ -564,7 +557,6 @@ namespace client {
                             var result = cmd.ExecuteScalar();
                             if (result == null)
                             {
-                                // Нет связанного пользователя — можно удалять только сотрудника
                                 userId = -1;
                             }
                             else
@@ -573,7 +565,6 @@ namespace client {
                             }
                         }
 
-                        // 2. Если есть связанный пользователь — удаляем его
                         if (userId > 0)
                         {
                             using (var cmd = new SQLiteCommand(
@@ -584,7 +575,6 @@ namespace client {
                             }
                         }
 
-                        // 3. Удаляем сотрудника
                         using (var cmd = new SQLiteCommand(
                             "DELETE FROM employees WHERE id = @employeeId", connection))
                         {
